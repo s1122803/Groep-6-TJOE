@@ -1,14 +1,53 @@
 window.onload = () => {
 	const places = document.getElementsByClassName('js--place');
 	const camera = document.getElementById('js--camera');
-
+  const phone = document.getElementById('js--phone');
+  const shoppinglist = document.getElementById('js--phone-shoppinglist');
 	let pickups = document.getElementsByClassName('js--pickup');
 	let hold = null;
 
 	const placeholders = document.getElementsByClassName('js--placeholder');
 	let scene = document.getElementById('js--scene');
 
+
+  function setShoppinglist(){
+    let rawList = ["pasta", "chips", "malse_kip", "Brood", "Banaan", "Koek", "Sla", "Groentjes"];
+    let listArray = "";
+    for(let i = 0; i < 4; i++){
+      let randomNum = Math.floor(Math.random() * rawList.length);
+      listArray = listArray + rawList[randomNum] + " ";
+      rawList.splice(randomNum, 1);
+    }
+    shoppingList = listArray.split(" ");
+    let list = shoppingList[0] + "\n";  
+    for(let i = 1; i<shoppingList.length; i++){
+        list = list + shoppingList[i] + "\n";
+      }
+      shoppinglist.setAttribute("value", list);
+  }
+
+  setShoppinglist();
+
   function addListeners() {
+    let phonePos = 0;
+    this.addEventListener('keydown', function (event) {
+      if (event.key === 'r' && phonePos === 0) {
+        phone.setAttribute("position", "0 0 -0.5");
+        phone.setAttribute("rotation", "0 -90 0");
+        phone.setAttribute("scale", "0.1 0.1 0.1");
+        phonePos = 1;
+        return
+      }
+      else if(event.key === 'r' && phonePos === 1){
+        phone.setAttribute("position", "-0.5 0 -0.5");
+        phone.setAttribute("rotation", "0 -10 0");
+        phone.setAttribute("scale", "0.07 0.07 0.07");
+        phonePos = 0;
+        return
+      }
+
+
+  });
     for (let i = 0; i < pickups.length; i++) {
       pickups[i].addEventListener('click', function(evt){
 
