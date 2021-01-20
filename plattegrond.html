@@ -13,8 +13,13 @@
     <a-scene id="js--scene">
 
       <a-assets>
-        <a-asset-item id="trein-obj" src="img\trein.obj"></a-asset-item>
-        <a-asset-item id="trein-mtl" src="img\trein.mtl"></a-asset-item>
+        <a-asset-item id="spaghetti" src="obj\spaghetti.glb"></a-asset-item>
+        <a-asset-item id="chips-naturel-obj" src="obj\chips_naturel.obj"></a-asset-item>
+        <a-asset-item id="chips-naturel-mtl" src="obj\chips_naturel.mtl"></a-asset-item>
+        <a-asset-item id="chips-paprika-obj" src="obj\chips_paprika.obj"></a-asset-item>
+        <a-asset-item id="chips-paprika-mtl" src="obj\chips_paprika.mtl"></a-asset-item>
+        <a-asset-item id="pastasaus-obj" src="obj\pastasaus.obj"></a-asset-item>
+        <a-asset-item id="pastasaus-mtl" src="obj\pastasaus.mtl"></a-asset-item>
       </a-assets>
 
 
@@ -71,6 +76,22 @@
 
 
       </a-plane>
+
+      <a-entity static-body gltf-model="#spaghetti"  material="transparent: true;" position="0 1 -1" scale="0.1 0.1 0.1"></a-entity>
+
+      <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="-0.8 0 -1" scale="0.1 0.1 0.1" rotation="0 180 0">
+        <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 6 0">
+          <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 6 0"></a-obj-model>
+          
+        </a-obj-model>
+
+      </a-obj-model>
+
+      <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0.5 1 -1" scale="0.1 0.1 0.1"></a-obj-model>
+      <a-obj-model src="#chips-paprika-obj" mtl="#chips-paprika-mtl" position="1 1 -1" scale="0.1 0.1 0.1"></a-obj-model>
+      <a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="1.5 1 -1" scale="0.1 0.1 0.1"></a-obj-model>
+
+
 
     </a-scene>
   </body>
