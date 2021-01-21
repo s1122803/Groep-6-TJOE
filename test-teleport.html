@@ -1,0 +1,26 @@
+<head>
+	<title>My A-Frame Scene</title>
+	<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+	<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+	<script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+</head>
+
+<body>
+	<a-scene>
+		<a-entity id="cameraRig">
+			<!-- camera -->
+			<a-entity id="head" camera wasd-controls look-controls position="0 1.6 0"></a-entity>
+			<!-- hand controls -->
+			<a-entity
+				id="left-hand"
+				oculus-touch-controls="hand: left"
+				teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; collisionEntities: .muur; curveShootingSpeed:10;"
+			></a-entity>
+			<a-entity id="right-hand" oculus-touch-controls="hand: right"></a-entity>
+		</a-entity>
+		<a-box class="muur" static-body color="#996600" height="1" width="4" depth="2" position="6.5 1 1"></a-box>
+		<a-box static-body color="cyan" height="1" width="7" depth="2" position="-5.5 1.5 1"></a-box>
+		<a-box class="muur" static-body color="orange" height="1" width="5" depth="2" position="-2.5 0.5 1"></a-box>
+		<a-entity environment="preset: forest;"></a-entity>
+	</a-scene>
+</body>
