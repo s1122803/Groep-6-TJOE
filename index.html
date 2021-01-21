@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-<<<<<<< HEAD
-		<script type="text/javascript" src="./js/main.js"></script>
-=======
-		<script type="text/javascript" src="js/main.js"></script>
->>>>>>> dev
+		<script type="text/javascript" src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+		<!-- <script type="text/javascript" src="./js/main.js"></script> -->
+		<script
+			type="text/javascript"
+			src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"
+		></script>
 		<title>The Joy of Education</title>
 	</head>
 	<body>
-		<h1><a href="plattegrond.html">naar de supermarkt</a></h1>
+		<a-scene>
+			<a-assets>
+				<a-asset-item id="winkel-obj" src="./obj/supermarkt.obj"></a-asset-item>
+				<a-asset-item id="winkel-mtl" src="./obj/supermarkt.mtl"></a-asset-item>
+			</a-assets>
+			<a-entity id="js--menuScene" visible="true">
+				<a-obj-model
+					src="#winkel-obj"
+					mtl="#winkel-mtl"
+					position="10 0 -10"
+					rotation="0 90 0"
+					scale="0.2 0.2 0.2"
+				></a-obj-model>
+				<a-text
+					value="THE JOURNEY OF EDUCATION"
+					text="align: center; letterSpacing: 13; negate: false; side: double; whiteSpace: pre"
+					position="0 3 -5"
+					scale="1.5 1.5 1.5"
+				></a-text>
+				<a-text value="START" position="0 2.5 -5" text="align: center; side: double"></a-text>
+				<a-text value="AANTAL BOODSCHAPPEN:" position="-2.31113 2 -5" text="side: double">
+					<a-text value="4" text="align: center" position="2.9 0 0"></a-text>
+					<a-text value="6" text="align: center" position="3.2 0 0"></a-text>
+					<a-text value="8" text="align: center" position="3.5 0 0"></a-text>
+				</a-text>
+				<a-text value="OPTIES" position="0 1.5 -5" text="align: center; side: double"></a-text>
+				<a-text value="LICENCIES" position="0 1 -5" text="align: center; side: double"></a-text>
+				<a-entity
+					environment="preset: forest; ground: noise; groundYScale: 5; groundTexture: walkernoise; skyType: color; skyColor: #87CEEB; fog: 0;"
+				></a-entity
+			></a-entity>
+		</a-scene>
 	</body>
 </html>
