@@ -3,6 +3,7 @@
 	<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
 	<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 	<script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+	<script src="./test.js"></script>
 </head>
 
 <body>
@@ -16,11 +17,18 @@
 				oculus-touch-controls="hand: left"
 				teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; collisionEntities: .muur; curveShootingSpeed:10;"
 			></a-entity>
-			<a-entity id="right-hand" oculus-touch-controls="hand: right"></a-entity>
+			<a-entity
+				id="right-hand"
+				laser-controls="hand: right"
+				raycaster="objects: .links; far: 2"
+				line="opacity: 0.25"
+			></a-entity>
 		</a-entity>
-		<a-box class="muur" static-body color="#996600" height="1" width="4" depth="2" position="6.5 1 1"></a-box>
+		<a-box class="muur" static-body color="#996600" height="1" width="4" depth="2" position="6.5 1 1">
+			<a-text class="links" id="test" value="Klik hier" position="0 1 -3s"></a-text>
+		</a-box>
 		<a-box static-body color="cyan" height="1" width="7" depth="2" position="-5.5 1.5 1"></a-box>
 		<a-box class="muur" static-body color="orange" height="1" width="5" depth="2" position="-2.5 0.5 1"></a-box>
-		<a-entity environment="preset: forest;"></a-entity>
+		<a-entity id="environment" environment="preset: forest;"></a-entity>
 	</a-scene>
 </body>
