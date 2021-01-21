@@ -1,55 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
-    <title>Lopen en vallen</title>
-  </head>
-  <body>
-    <a-scene id="js--scene">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+		<title>Lopen en vallen</title>
+	</head>
+	<body>
+		<a-scene id="js--scene">
+			<a-assets>
+				<a-asset-item id="trein-obj" src="img\trein.obj"></a-asset-item>
+				<a-asset-item id="trein-mtl" src="img\trein.mtl"></a-asset-item>
+			</a-assets>
 
-      <a-assets>
-        <a-asset-item id="trein-obj" src="img\trein.obj"></a-asset-item>
-        <a-asset-item id="trein-mtl" src="img\trein.mtl"></a-asset-item>
-      </a-assets>
+			<a-obj-model dynamic-body src="#trein-obj" mtl="#trein-mtl" position="0 1 -1" scale="0.1 0.1 0.1"></a-obj-model>
 
-      <a-obj-model dynamic-body src="#trein-obj" mtl="#trein-mtl" position="0 1 -1" scale="0.1 0.1 0.1"></a-obj-model>
+			<a-camera id="js--camera">
+				<a-entity
+					animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+					animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
+					animation="property: scale; startEvents: mouseleave; fusing: easing: easeInCubic; dur: 500; to: 1 1 1"
+					cursor="fuse: true; fuseTimeout: 2000;"
+					material="color: black; shader: flat"
+					geometry="primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
+					position="0 0 -0.5"
+					raycaster="objects: .js--interact"
+				></a-entity>
+			</a-camera>
+			<!-- basis kijkhoogte is 1,8 -->
 
-      <a-camera id="js--camera">
-        <a-entity
-          animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
-          animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
-          animation="property: scale; startEvents: mouseleave; fusing: easing: easeInCubic; dur: 500; to: 1 1 1"
-          cursor = "fuse: true; fuseTimeout: 2000;"
-          material = "color: black; shader: flat"
-          geometry = "primitive: ring; radiusInner: 0.007; radiusOuter: 0.01"
-          position = "0 0 -0.5"
-          raycaster = "objects: .js--interact"
-        ></a-entity>
-      </a-camera>
-      <!-- basis kijkhoogte is 1,8 -->
+			<a-plane static-body color="yellow" height="50" width="50" rotation="-90 0 0"></a-plane>
 
-      <a-plane static-body color="yellow" height="50" width="50" rotation="-90 0 0"></a-plane>
+			<a-box dynamic-body class="js--place js--interact" color="blue" position="-4.5 10 -4.5"></a-box>
+			<a-box dynamic-body class="js--place js--interact" color="blue" position="4.5 10 -4.5"></a-box>
+			<a-box dynamic-body class="js--place js--interact" color="blue" position="-4.5 10 4.5"></a-box>
+			<a-box dynamic-body class="js--place js--interact" color="blue" position="4.5 10 4.5"></a-box>
 
-      <a-box dynamic-body class="js--place js--interact" color="blue" position="-4.5 10 -4.5"></a-box>
-      <a-box dynamic-body class="js--place js--interact" color="blue" position="4.5 10 -4.5"></a-box>
-      <a-box dynamic-body class="js--place js--interact" color="blue" position="-4.5 10 4.5"></a-box>
-      <a-box dynamic-body class="js--place js--interact" color="blue" position="4.5 10 4.5"></a-box>
+			<a-box dynamic-body class="js--pickup js--interact" color="green" position="-4 5 -4"></a-box>
+			<a-box dynamic-body class="js--pickup js--interact" color="green" position="4 5 -4"></a-box>
+			<a-box dynamic-body class="js--pickup js--interact" color="green" position="-4 5 4"></a-box>
+			<a-box dynamic-body class="js--pickup js--interact" color="green" position="4 5 4"></a-box>
 
-      <a-box dynamic-body class="js--pickup js--interact" color="green" position="-4 5 -4"></a-box>
-      <a-box dynamic-body class="js--pickup js--interact" color="green" position="4 5 -4"></a-box>
-      <a-box dynamic-body class="js--pickup js--interact" color="green" position="-4 5 4"></a-box>
-      <a-box dynamic-body class="js--pickup js--interact" color="green" position="4 5 4"></a-box>
-
-      <a-cylinder class="js--placeholder js--interact" color="red" radius="0.5" height="0.1" position="0 0 4"></a-cylinder>
-      <a-cylinder class="js--placeholder js--interact" color="red" radius="0.5" height="0.1" position="0 0 -4"></a-cylinder>
-      <a-cylinder class="js--placeholder js--interact" color="red" radius="0.5" height="0.1" position="4 0 0"></a-cylinder>
-      <a-cylinder class="js--placeholder js--interact" color="red" radius="0.5" height="0.1" position="-4 0 0"></a-cylinder>
-
-    </a-scene>
-  </body>
+			<a-cylinder
+				class="js--placeholder js--interact"
+				color="red"
+				radius="0.5"
+				height="0.1"
+				position="0 0 4"
+			></a-cylinder>
+			<a-cylinder
+				class="js--placeholder js--interact"
+				color="red"
+				radius="0.5"
+				height="0.1"
+				position="0 0 -4"
+			></a-cylinder>
+			<a-cylinder
+				class="js--placeholder js--interact"
+				color="red"
+				radius="0.5"
+				height="0.1"
+				position="4 0 0"
+			></a-cylinder>
+			<a-cylinder
+				class="js--placeholder js--interact"
+				color="red"
+				radius="0.5"
+				height="0.1"
+				position="-4 0 0"
+			></a-cylinder>
+		</a-scene>
+	</body>
 </html>
