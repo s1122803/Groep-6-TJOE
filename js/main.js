@@ -20,15 +20,51 @@ window.onload = () => {
 	const optiesButton = document.getElementById('optiesButton');
 	const menuScene = document.getElementById('js--menuScene');
 	const winkelScene = document.getElementById('js--winkelScene');
+	const shopItem = document.getElementsByClassName('js--shopItem');
 
-	startButton.addEventListener('click', function () {
-		menuScene.setAttribute('visible', 'false');
-		winkelScene.setAttribute('visible', 'true');
-	});
-	optiesButton.addEventListener('click', function () {
-		menuScene.setAttribute('visible', 'false');
-		winkelScene.setAttribute('visible', 'true');
-	});
+	function addListeners() {
+		optiesButton.addEventListener('click', function () {
+			menuScene.setAttribute('visible', 'false');
+			winkelScene.setAttribute('visible', 'true');
+		});
+		startButton.addEventListener('click', function () {
+			menuScene.setAttribute('visible', 'false');
+			winkelScene.setAttribute('visible', 'true');
+		});
+		let phonePos = 0;
+		this.addEventListener('keydown', function (event) {
+			if (event.key === 'r' && phonePos === 0) {
+				phone.setAttribute('position', '0 0 -0.5');
+				phone.setAttribute('rotation', '0 -90 0');
+				phone.setAttribute('scale', '0.1 0.1 0.1');
+				phonePos = 1;
+				return;
+			} else if (event.key === 'r' && phonePos === 1) {
+				phone.setAttribute('position', '-0.5 0 -0.5');
+				phone.setAttribute('rotation', '0 -10 0');
+				phone.setAttribute('scale', '0.07 0.07 0.07');
+				phonePos = 0;
+				return;
+			}
+		});
+		for (let i = 0; i < pickups.length; i++) {
+			pickups[i].addEventListener('click', function (evt) {
+				let cameraX = camera.getAttribute('position').x;
+				let cameraZ = camera.getAttribute('position').z;
+				let destinationX = this.getAttribute('position').x;
+				let destinationZ = this.getAttribute('position').z;
+				let distance = Math.sqrt((cameraX - destinationX) * (cameraX - destinationX) + (cameraZ - destinationZ) * (cameraZ - destinationZ));
+
+				if (hold == null && distance <= 6) {
+					camera.innerHTML += '<a-box id="js--hold" class="js--pickup js--interact" color="green" position="1 -1 -1"></a-box>';
+					hold = 'box';
+					this.remove();
+				}
+			});
+		}
+	}
+
+	addListeners();
 
 	// Maakt de shopping list aan met de prijzen en geeft een random lijstje aan de speler
 	function setShoppinglist() {
@@ -98,42 +134,6 @@ window.onload = () => {
 			}
 		}
 	}
-
-	function addListeners() {
-		let phonePos = 0;
-		this.addEventListener('keydown', function (event) {
-			if (event.key === 'r' && phonePos === 0) {
-				phone.setAttribute('position', '0 0 -0.5');
-				phone.setAttribute('rotation', '0 -90 0');
-				phone.setAttribute('scale', '0.1 0.1 0.1');
-				phonePos = 1;
-				return;
-			} else if (event.key === 'r' && phonePos === 1) {
-				phone.setAttribute('position', '-0.5 0 -0.5');
-				phone.setAttribute('rotation', '0 -10 0');
-				phone.setAttribute('scale', '0.07 0.07 0.07');
-				phonePos = 0;
-				return;
-			}
-		});
-		for (let i = 0; i < pickups.length; i++) {
-			pickups[i].addEventListener('click', function (evt) {
-				let cameraX = camera.getAttribute('position').x;
-				let cameraZ = camera.getAttribute('position').z;
-				let destinationX = this.getAttribute('position').x;
-				let destinationZ = this.getAttribute('position').z;
-				let distance = Math.sqrt((cameraX - destinationX) * (cameraX - destinationX) + (cameraZ - destinationZ) * (cameraZ - destinationZ));
-
-				if (hold == null && distance <= 6) {
-					camera.innerHTML += '<a-box id="js--hold" class="js--pickup js--interact" color="green" position="1 -1 -1"></a-box>';
-					hold = 'box';
-					this.remove();
-				}
-			});
-		}
-	}
-
-	addListeners();
 
 	for (let i = 0; i < placeholders.length; i++) {
 		placeholders[i].addEventListener('click', function (evt) {
