@@ -29,6 +29,8 @@
 						position="0 1.6 0"
 						rotation=""
 						data-aframe-inspector-original-camera=""
+						cursor="fuse: false; rayOrigin: mouse"
+						raycaster="objects: .clickable; far: 50;"
 					></a-entity>
 					<!-- hand controls -->
 					<a-entity id="left-hand" oculus-touch-controls="hand: left"></a-entity>
@@ -36,13 +38,14 @@
 					<a-entity
 						id="right-hand"
 						laser-controls="hand: right"
-						raycaster="objects: [clickable]; far: 10"
+						raycaster="objects: .clickable; far: infinite"
 						line="opacity: 0.5"
 					></a-entity>
 				</a-entity>
 
 				<!-- De winkel -->
 				<a-obj-model
+					class="not-clickable"
 					src="#winkel-obj"
 					mtl="#winkel-mtl"
 					position="10 0 -10"
@@ -51,56 +54,31 @@
 				></a-obj-model>
 				<!-- De menu items -->
 				<a-text
+					class="not-clickable"
 					value="THE JOURNEY OF EDUCATION"
-					text="align: center; letterSpacing: 13; negate: false; side: double; whiteSpace: pre"
+					text="align: center; letterSpacing: 13; negate: false;  whiteSpace: pre"
 					position="0 3 -5"
 					scale="1.5 1.5 1.5"
 				></a-text>
-				<a-text
-					clickable='true'
-					id="startButton"
-					value="START"
-					position="0 2.5 -5"
-					text="align: center; side: double"
-				></a-text>
-				<a-text value="AANTAL BOODSCHAPPEN:" position="-2.31113 2 -5" text="side: double">
+				<a-text class="clickable" id="startButton" value="START" position="0 2.5 -5" text="align: center;"></a-text>
+				<a-text value="AANTAL BOODSCHAPPEN:" position="-2.31113 2 -5">
 					<a-text class="clickable" value="4" text="align: center" position="2.9 0 0"></a-text>
 					<a-text class="clickable" value="6" text="align: center" position="3.2 0 0"></a-text>
 					<a-text class="clickable" value="8" text="align: center" position="3.5 0 0"></a-text>
 				</a-text>
-				<a-text class="clickable" value="OPTIES" position="0 1.5 -5" text="align: center; side: double"></a-text>
-				<a-text class="clickable" value="LICENCIES" position="0 1 -5" text="align: center; side: double"></a-text>
+				<a-text class="clickable" id="optiesButton" value="OPTIES" position="0 1.5 -5" text="align: center;"></a-text>
+				<a-text class="clickable" value="LICENCIES" position="0 1 -5" text="align: center;"></a-text>
 				<a-entity
 					environment="preset: forest; ground: noise; groundYScale: 5; groundTexture: walkernoise; skyType: color; skyColor: #87CEEB; fog: 0;"
 				></a-entity
 			></a-entity>
 
-      <!-- tweede scene hieronder! -->
-      <a-entity id="js--winkelScene" visible='false'>
-        <a-entity id="cameraRig">
-					<!-- camera -->
-					<a-entity
-						id="head"
-						camera=""
-						wasd-controls=""
-						look-controls=""
-						position="0 1.6 0"
-						rotation=""
-						data-aframe-inspector-original-camera=""
-					></a-entity>
-					<!-- hand controls -->
-					<a-entity id="left-hand" oculus-touch-controls="hand: left" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; collisionEntities: .muur; curveShootingSpeed:10;"></a-entity>
-					<a-entity
-						id="right-hand"
-						laser-controls="hand: right"
-						raycaster="objects: .clickable; far: 10"
-						line="opacity: 0.5"
-					></a-entity>
-				</a-entity>
-        <a-entity
+			<!-- tweede scene hieronder! -->
+			<a-entity id="js--winkelScene" visible="false">
+				<a-entity
 					environment="preset: dream; ground: noise; groundYScale: 5; groundTexture: walkernoise; skyType: color; skyColor: #87CEEB; fog: 0;"
-				></a-entity
-      </a-entity>
+				></a-entity>
+			</a-entity>
 		</a-scene>
 	</body>
 </html>
