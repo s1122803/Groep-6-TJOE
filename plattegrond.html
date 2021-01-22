@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
     <title>The Joy of Education</title>
@@ -20,10 +20,21 @@
         <a-asset-item id="chips-paprika-mtl" src="obj\chips_paprika.mtl"></a-asset-item>
         <a-asset-item id="pastasaus-obj" src="obj\pastasaus.obj"></a-asset-item>
         <a-asset-item id="pastasaus-mtl" src="obj\pastasaus.mtl"></a-asset-item>
+        <a-asset-item id="telefoon-obj" src="obj\telefoon.obj"></a-asset-item>
+        <a-asset-item id="telefoon-mtl" src="obj\telefoon.mtl"></a-asset-item>
+        <a-asset-item id="kast-5-obj" src="obj\kast_5.obj"></a-asset-item>
+        <a-asset-item id="kast-5-mtl" src="obj\kast_5.mtl"></a-asset-item>
+        <a-asset-item id="kast-7-obj" src="obj\kast_7.obj"></a-asset-item>
+        <a-asset-item id="kast-7-mtl" src="obj\kast_7.mtl"></a-asset-item>
+        <a-asset-item id="kast-4-obj" src="obj\kast_4.obj"></a-asset-item>
+        <a-asset-item id="kast-4-mtl" src="obj\kast_4.mtl"></a-asset-item>
+        <a-asset-item id="vers-obj" src="obj\vers.obj"></a-asset-item>
+        <a-asset-item id="vers-mtl" src="obj\vers.mtl"></a-asset-item>
       </a-assets>
 
+      <!-- position="0 0.1 0" -->
 
-      <a-camera id="js--camera" wasd-controls="acceleration: 125">
+      <a-camera id="js--camera" wasd-controls="acceleration: 100">
         <a-entity
           animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
           animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -37,59 +48,110 @@
       </a-camera>
       <!-- basis kijkhoogte is 1,8 -->
 
-      <a-plane static-body color="purple" height="15" width="15" rotation="-90 0 0">
+      <a-entity id="js--winkelScene" visible="true">
+
+        <!-- beloopbare grond -->
+        <a-plane class="js--welLopen" color="green" height="12.5" width="2" position="0 0 -5.25" rotation="-90 0 0"></a-plane>
+        <a-plane class="js--welLopen" color="green" height="12" width="2" position="7 0 -5" rotation="-90 0 0"></a-plane>
+        <a-plane class="js--welLopen" color="green" height="2.5" width="5" position="3.5 0 -6.25" rotation="-90 0 0"></a-plane>
+        <a-plane class="js--welLopen" color="green" height="2.5" width="5" position="3.5 0 -0.75" rotation="-90 0 0"></a-plane>
+        <a-plane class="js--welLopen" color="green" height="2.5" width="5" position="3.5 0 -9.75" rotation="-90 0 0"></a-plane>
+        <a-plane class="js--welLopen" color="green" height="3" width="1.8" position="3.5 0 -3.5" rotation="-90 0 0"></a-plane>
+
+        <!-- niet beloopbare grond -->
+        <a-plane class="js--nietLopen" color="red" height="0.5" width="0.5" position="8.25 0 -11.25" rotation="-90 0 0"></a-plane>
+        <a-plane class="js--nietLopen" color="red" height="10.5" width="2" position="-2.5 0 -3.75" rotation="-90 0 0"></a-plane>
+        <a-plane class="js--nietLopen" color="red" height="0.5" width="1" position="1.5 0 0.75" rotation="-90 0 0"></a-plane>
+        <a-plane class="js--nietLopen" color="red" height="0.5" width="2" position="-0 0 1.25" rotation="-90 0 0"></a-plane>
+
+        <!-- afrekenen -->
+        <a-plane class="js--kassaVloer" color="gold" height="1.5" width="0.5" position="-1.25 0 -9.75" rotation="-90 0 0"></a-plane>
+        <a-plane class="js--kassaVloer" color="gold" height="1.5" width="2" position="-2.5 0 -9.75" rotation="-90 0 0"></a-plane>
+
         <!-- zuivel -->
-        <a-box static-body  color="#B4C7E7" height="1" width="7" depth="2" position="-1.5 5.5 1"></a-box>
+        <a-obj-model src="#kast-7-obj" mtl="#kast-7-mtl" position="8.25 0 -7.5" scale="0.5 0.5 0.5"></a-obj-model>
 
         <!-- vleeswaren -->
-        <a-box static-body  color="#FF99CC" height="1" width="5" depth="2" position="4.5 5.5 1"></a-box>
-
-        <!-- brood -->
-        <a-box static-body  color="#996600" height="1" width="4" depth="2" position="6.5 1 1" rotation="0 0 90"></a-box>
+        <a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="8.25 0 -1.5" scale="0.5 0.5 0.5"></a-obj-model>
 
         <!-- drinken -->
-        <a-box static-body  color="cyan" height="1" width="7" depth="2" position="-5.5 1.5 1" rotation="0 0 -90"></a-box>
-
-        <!-- snacks -->
-        <a-box static-body  color="orange" height="1" width="5" depth="2" position="-2.5 0.5 1" rotation="0 0 -90"></a-box>
+        <a-obj-model src="#kast-7-obj" mtl="#kast-7-mtl" position="4.5 0 -11.25" scale="0.5 0.5 0.5" rotation="0 90 0"></a-obj-model>
 
         <!-- houdbaar -->
-        <a-box static-body  color="yellow" height="1" width="5" depth="2" position="-1.5 0.5 1" rotation="0 0 -90"></a-box>
+        <a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="3.5 0 -7.75" scale="0.5 0.5 0.5" rotation="0 90 0">
+          <a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -4.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -3.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -2.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -1.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -0.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 0.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 1.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 2.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 3.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 4.5" scale="0.2 0.2 0.2"></a-obj-model>
 
-        <!-- vlees -->
-        <a-box static-body  color="red" height="1.5" width="3" depth="1" position="2.5 2.25 0.5"></a-box>
+          <a-entity static-body gltf-model="#spaghetti"  material="transparent: true;" position="0 1.48 -4.3" scale="0.25 0.25 0.25"></a-entity>
+          <a-entity static-body gltf-model="#spaghetti"  material="transparent: true;" position="0 1.48 -3.1" scale="0.25 0.25 0.25"></a-entity>
+          <a-entity static-body gltf-model="#spaghetti"  material="transparent: true;" position="0 1.48 -1.9" scale="0.25 0.25 0.25"></a-entity>
+          <a-entity static-body gltf-model="#spaghetti"  material="transparent: true;" position="0 1.48 -0.7" scale="0.25 0.25 0.25"></a-entity>
+          <a-entity static-body gltf-model="#spaghetti"  material="transparent: true;" position="0 1.48 0.5" scale="0.25 0.25 0.25"></a-entity>
+          <a-entity static-body gltf-model="#spaghetti"  material="transparent: true;" position="0 1.48 1.7" scale="0.25 0.25 0.25"></a-entity>
+          <a-entity static-body gltf-model="#spaghetti"  material="transparent: true;" position="0 1.48 2.9" scale="0.25 0.25 0.25"></a-entity>
+          <a-entity static-body gltf-model="#spaghetti"  material="transparent: true;" position="0 1.48 4.1" scale="0.25 0.25 0.25"></a-entity>
+        </a-obj-model>
+
+        <!-- snacks -->
+        <a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="3.5 0 -8.25" scale="0.5 0.5 0.5" rotation="0 -90 0">
+          <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 2.8 -4.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 2.8 -3.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 2.8 -2.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 2.8 -1.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 2.8 -0.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#chips-naturel-obj" mtl="#chips-paprika-mtl" position="0 2.8 0.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#chips-naturel-obj" mtl="#chips-paprika-mtl" position="0 2.8 1.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#chips-naturel-obj" mtl="#chips-paprika-mtl" position="0 2.8 2.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#chips-naturel-obj" mtl="#chips-paprika-mtl" position="0 2.8 3.5" scale="0.2 0.2 0.2"></a-obj-model>
+          <a-obj-model src="#chips-naturel-obj" mtl="#chips-paprika-mtl" position="0 2.8 4.5" scale="0.2 0.2 0.2"></a-obj-model>
+        </a-obj-model>
+
+        <!-- brood -->
+        <a-obj-model src="#kast-4-obj" mtl="#kast-4-mtl" position="4 0 0.75" scale="0.5 0.5 0.5" rotation="0 -90 0"></a-obj-model>
 
         <!-- groente -->
-        <a-box static-body  color="green" height="1.5" width="3" depth="1" position="2.5 -1.25 0.5"></a-box>
+        <a-obj-model src="#vers-obj" mtl="#vers-mtl" position="1.8 0 -3.5" scale="0.5 0.5 0.5" rotation="0 -90 0"></a-obj-model>
+
+        <!-- vlees/vis -->
+        <a-obj-model src="#vers-obj" mtl="#vers-mtl" position="5.2 0 -3.5" scale="0.5 0.5 0.5" rotation="0 -90 0"></a-obj-model>
 
         <!-- kassa -->
-        <a-box static-body  color="black" height="1" width="3" depth="1" position="-5.5 -5 0.5" rotation="0 0 -90"></a-box>
+        <a-box  color="black" height="1" width="2.5" depth="1" position="-2.25 0.5 -11"></a-box>
 
         <!-- muren -->
-        <a-box static-body  color="grey" height="0.5" width="14" depth="3" position="0.5 6.25 1.5"></a-box>
-        <a-box static-body  color="grey" height="0.5" width="13.5" depth="3" position="-6.75 -0.25 1.5" rotation="0 0 -90"></a-box>
-        <a-box static-body  color="grey" height="0.5" width="14" depth="3" position="0.5 -6.75 1.5"></a-box>
-        <a-box static-body  color="grey" height="0.5" width="8.5" depth="3" position="7.25 2.25 1.5" rotation="0 0 -90"></a-box>
-        <a-box static-body  color="grey" height="0.5" width="10.5" depth="1" position="2.25 -4.25 0.5"></a-box>
-        <a-box static-body  color="grey" height="0.5" width="0.5" depth="3" position="7.25 -4.25 1.5"></a-box>
-        <!-- <a-box static-body  color="grey" height="13.5" width="14" depth="0.5" position="0.5 -0.25 3.25"></a-box> -->
+        <a-box  color="grey" height="3" width="12.5" depth="0.5" position="2.75 1.5 -11.75"></a-box>
+        <a-box  color="grey" height="3" width="0.5" depth="13.5" position="-3.75 1.5 -5.25"></a-box>
+        <a-box  color="grey" height="3" width="0.5" depth="12.5" position="8.75 1.5 -5.25"></a-box>
+        <a-box  color="grey" height="1" width="0.5" depth="10" position="-1.25 0.5 -4"></a-box>
+        <a-box  color="grey" height="3" width="0.5" depth="0.5" position="-1.25 1.5 1.25"></a-box>
+        <a-box  color="grey" height="3" width="8" depth="0.5" position="5 1.5 1.25"></a-box>
+
+      </a-entity>
 
 
-      </a-plane>
 
-      <a-entity static-body gltf-model="#spaghetti"  material="transparent: true;" position="0 1 -1" scale="0.1 0.1 0.1"></a-entity>
+
+
+      <!-- <a-entity static-body gltf-model="#spaghetti"  material="transparent: true;" position="0 1 -1" scale="0.1 0.1 0.1"></a-entity>
 
       <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="-0.8 0 -1" scale="0.1 0.1 0.1" rotation="0 180 0">
         <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 6 0">
           <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 6 0"></a-obj-model>
-          
         </a-obj-model>
-
       </a-obj-model>
 
       <a-obj-model src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0.5 1 -1" scale="0.1 0.1 0.1"></a-obj-model>
       <a-obj-model src="#chips-paprika-obj" mtl="#chips-paprika-mtl" position="1 1 -1" scale="0.1 0.1 0.1"></a-obj-model>
       <a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="1.5 1 -1" scale="0.1 0.1 0.1"></a-obj-model>
+      <a-obj-model src="#telefoon-obj" mtl="#telefoon-mtl" position="2 1 -1" scale="0.1 0.1 0.1"></a-obj-model> -->
 
 
 
