@@ -21,11 +21,11 @@ window.onload = () => {
 	const menuScene = document.getElementById('js--menuScene');
 	const winkelScene = document.getElementById('js--winkelScene');
 
-	optiesButton.addEventListener('click', function () {
+	startButton.addEventListener('click', function () {
 		menuScene.setAttribute('visible', 'false');
 		winkelScene.setAttribute('visible', 'true');
 	});
-	startButton.addEventListener('click', function () {
+	optiesButton.addEventListener('click', function () {
 		menuScene.setAttribute('visible', 'false');
 		winkelScene.setAttribute('visible', 'true');
 	});
@@ -122,13 +122,10 @@ window.onload = () => {
 				let cameraZ = camera.getAttribute('position').z;
 				let destinationX = this.getAttribute('position').x;
 				let destinationZ = this.getAttribute('position').z;
-				let distance = Math.sqrt(
-					(cameraX - destinationX) * (cameraX - destinationX) + (cameraZ - destinationZ) * (cameraZ - destinationZ)
-				);
+				let distance = Math.sqrt((cameraX - destinationX) * (cameraX - destinationX) + (cameraZ - destinationZ) * (cameraZ - destinationZ));
 
 				if (hold == null && distance <= 6) {
-					camera.innerHTML +=
-						'<a-box id="js--hold" class="js--pickup js--interact" color="green" position="1 -1 -1"></a-box>';
+					camera.innerHTML += '<a-box id="js--hold" class="js--pickup js--interact" color="green" position="1 -1 -1"></a-box>';
 					hold = 'box';
 					this.remove();
 				}
@@ -144,9 +141,7 @@ window.onload = () => {
 			let cameraZ = camera.getAttribute('position').z;
 			let destinationX = this.getAttribute('position').x;
 			let destinationZ = this.getAttribute('position').z;
-			let distance = Math.sqrt(
-				(cameraX - destinationX) * (cameraX - destinationX) + (cameraZ - destinationZ) * (cameraZ - destinationZ)
-			);
+			let distance = Math.sqrt((cameraX - destinationX) * (cameraX - destinationX) + (cameraZ - destinationZ) * (cameraZ - destinationZ));
 
 			if (hold == 'box' && distance <= 6) {
 				let box = document.createElement('a-box');
@@ -176,18 +171,10 @@ window.onload = () => {
 			// let distanceX = (cameraX - destinationX) * (cameraX - destinationX);
 			// let distanceZ = (cameraZ - destinationZ) * (cameraZ - destinationZ);
 			// let distance = Math.sqrt(distanceX + distanceZ);
-			let distance = Math.sqrt(
-				(cameraX - destinationX) * (cameraX - destinationX) + (cameraZ - destinationZ) * (cameraZ - destinationZ)
-			);
+			let distance = Math.sqrt((cameraX - destinationX) * (cameraX - destinationX) + (cameraZ - destinationZ) * (cameraZ - destinationZ));
 			let duration = (distance / 4) * 1000;
 			console.log(duration);
-			att.value =
-				'property: position; easing: linear; dur: ' +
-				duration +
-				'; to: ' +
-				this.getAttribute('position').x +
-				' 1.6 ' +
-				this.getAttribute('position').z;
+			att.value = 'property: position; easing: linear; dur: ' + duration + '; to: ' + this.getAttribute('position').x + ' 1.6 ' + this.getAttribute('position').z;
 			camera.setAttribute('animation', att.value);
 		});
 	}
