@@ -53,7 +53,7 @@ window.onload = () => {
 		// });
 	}
 
-  addListeners();
+	addListeners();
 
 	// Maakt de shopping list aan met de prijzen en geeft een random lijstje aan de speler
 	const setShoppinglist = () => {
