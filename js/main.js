@@ -93,18 +93,17 @@ window.onload = () => {
 		let pricePos = parseInt(priceSplit[priceSplit.length - 1]);
 
 		let priceDecimal = Math.ceil(pricePos / 5) * 5;
-		console.log(pricePos)
-		console.log("test "+ priceDecimal);
-		console.log("totale prijs"+totalPrice);
-	
+
 		if(priceDecimal < 10){
-			console.log(priceDecimal, "kleiner dan 10");
-			totalPrice = parseFloat(priceSplit[0] + "." + "0" + toString(priceDecimal));
+			let part_1 = priceSplit[0].toString();
+			let part_2 = "0" + priceDecimal.toString();
+			let convert = part_1 + "." + part_2
+			totalPrice = parseFloat(convert);
 		}else{
 			totalPrice = parseFloat(priceSplit[0] + "." + priceDecimal);
+			totalPrice = totalPrice.toFixed(2)
 		}
-		totalPrice = parseFloat(priceSplit[0] + "." + priceDecimal);
-		console.log("TotalPrice = " + totalPrice.toFixed(2));
+		console.log("TotalPrice = " + totalPrice);
 
 	}
 	setShoppinglist();
