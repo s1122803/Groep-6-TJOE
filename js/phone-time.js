@@ -1,6 +1,5 @@
 AFRAME.registerComponent("phone", {
     init:function(){
-
         const phone = document.querySelector("[phoneTime]");
         const BASE_URL = "http://worldclockapi.com/api/json/cet/now";
         this.getTime = function(){
@@ -16,7 +15,7 @@ AFRAME.registerComponent("phone", {
         this.getTime();
     },
     tick:function(){
- 
+
     },
     remove:function(){
 
