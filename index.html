@@ -6,12 +6,12 @@
 		<script type="text/javascript" src="./js/main.js"></script>
 		<script type="text/javascript" src="./js/phone-time.js"></script>
 		<script type="text/javascript" src="./js/pickup.js"></script>
-		<script type="text/javascript" src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"
-		></script>
-
+		<script type="text/javascript" src="./js/start-game.js"></script>
+		<script type="text/javascript" src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
 		<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 		<title>The Journey of Education</title>
 	</head>
+
 	<body>
 		<a-scene>
 			<a-assets>
@@ -32,143 +32,240 @@
 				<a-asset-item id="kast-7-mtl" src="obj\kast_7.mtl"></a-asset-item>
 				<a-asset-item id="kast-4-obj" src="obj\kast_4.obj"></a-asset-item>
 				<a-asset-item id="kast-4-mtl" src="obj\kast_4.mtl"></a-asset-item>
+				<a-asset-item id="kast-12-obj" src="obj\kast_12.obj"></a-asset-item>
+				<a-asset-item id="kast-12-mtl" src="obj\kast_12.mtl"></a-asset-item>
 				<a-asset-item id="vers-obj" src="obj\vers.obj"></a-asset-item>
 				<a-asset-item id="vers-mtl" src="obj\vers.mtl"></a-asset-item>
+				<a-asset-item id="groente-obj" src="obj\groente_enkel.obj"></a-asset-item>
+				<a-asset-item id="groente-mtl" src="obj\groente_enkel.mtl"></a-asset-item>
 				<a-asset-item id="kip-obj" src="obj\kip.obj"></a-asset-item>
 				<a-asset-item id="kip-mtl" src="obj\kip.mtl"></a-asset-item>
+				<a-asset-item id="chocolade-obj" src="obj\chocoladev2.obj"></a-asset-item>
+				<a-asset-item id="chocolade-mtl" src="obj\chocoladev2.mtl"></a-asset-item>
+				<a-asset-item id="pringles-obj" src="obj\pringles.obj"></a-asset-item>
+				<a-asset-item id="pringles-mtl" src="obj\pringles.mtl"></a-asset-item>
+				<a-asset-item id="spinazie-obj" src="obj\spinazie.obj"></a-asset-item>
+				<a-asset-item id="spinazie-mtl" src="obj\spinazie.mtl"></a-asset-item>
+				<a-asset-item id="broccoli-obj" src="obj\broccoli.obj"></a-asset-item>
+				<a-asset-item id="broccoli-mtl" src="obj\broccoli.mtl"></a-asset-item>
+				<a-asset-item id="appel-obj" src="obj\appel.obj"></a-asset-item>
+				<a-asset-item id="appel-mtl" src="obj\appel.mtl"></a-asset-item>
+				<a-asset-item id="10euro-obj" src="obj\10euro.obj"></a-asset-item>
+				<a-asset-item id="10euro-mtl" src="obj\10euro.mtl"></a-asset-item>
+				<a-asset-item id="5euro-obj" src="obj\5euro.obj"></a-asset-item>
+				<a-asset-item id="5euro-mtl" src="obj\5euro.mtl"></a-asset-item>
+				<a-asset-item id="2euro-obj" src="obj\2euro.obj"></a-asset-item>
+				<a-asset-item id="2euro-mtl" src="obj\2euro.mtl"></a-asset-item>
+				<a-asset-item id="1euro-obj" src="obj\1euro.obj"></a-asset-item>
+				<a-asset-item id="1euro-mtl" src="obj\1euro.mtl"></a-asset-item>
+				<a-asset-item id="50cent-obj" src="obj\50cent.obj"></a-asset-item>
+				<a-asset-item id="50cent-mtl" src="obj\50cent.mtl"></a-asset-item>
+				<a-asset-item id="20cent-obj" src="obj\20cent.obj"></a-asset-item>
+				<a-asset-item id="20cent-mtl" src="obj\20cent.mtl"></a-asset-item>
+				<a-asset-item id="10cent-obj" src="obj\10cent.obj"></a-asset-item>
+				<a-asset-item id="10cent-mtl" src="obj\10cent.mtl"></a-asset-item>
+				<a-asset-item id="5cent-obj" src="obj\5cent.obj"></a-asset-item>
+				<a-asset-item id="5cent-mtl" src="obj\5cent.mtl"></a-asset-item>
 			</a-assets>
 			<!-- Start menu -->
 			<a-entity id="js--menuScene" visible="true">
 				<!-- De camera -->
 				<a-entity id="cameraRig1">
 					<!-- camera -->
-					<a-entity id="head1" camera="" wasd-controls="" look-controls="" position="0 1.6 0" cursor="fuse: false; rayOrigin: mouse" raycaster="objects: .clickable; far: infinity; recursive: true;"></a-entity>
+					<a-entity id="head1" camera="" wasd-controls="" look-controls="" position="0 1.6 0" rotation="" data-aframe-inspector-original-camera="" cursor="fuse: false; rayOrigin: mouse" raycaster="objects: .clickable; far: infinite;"></a-entity>
 					<!-- hand controls -->
 					<a-entity id="left-hand1" oculus-touch-controls="hand: left"></a-entity>
 					<!--teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; collisionEntities: .muur; curveShootingSpeed:10;"-->
 					<a-entity id="right-hand1" laser-controls="hand: right" raycaster="objects: .clickable; far: infinite" line="opacity: 0.5"></a-entity>
 				</a-entity>
-
 				<!-- De winkel -->
 				<a-obj-model class="not-clickable" src="#winkel-obj" mtl="#winkel-mtl" position="10 0 -10" rotation="0 90 0" scale="0.2 0.2 0.2"></a-obj-model>
 				<!-- De menu items -->
 				<a-text class="not-clickable" value="THE JOURNEY OF EDUCATION" text="align: center; letterSpacing: 13; negate: false;  whiteSpace: pre" position="0 3 -5" scale="1.5 1.5 1.5"></a-text>
-				<a-text class="clickable" id="startButton" value="START" position="0 2.5 -5" text="align: center;"></a-text>
+				<a-box startbutton class="clickable" height="0.5" position="-0.02352 2.5 -5.10468" material="opacity: 0; transparent: true;" geometry="height: 0.2; depth: 0.16"></a-box>
+				<a-text class="" id="startButton" value="START" position="0 2.5 -5" text="align: center;"></a-text>
 				<a-text value="AANTAL BOODSCHAPPEN:" position="-2.31113 2 -5">
-					<a-text class="clickable" value="4" text="align: center" position="2.9 0 0"></a-text>
-					<a-text class="clickable" value="6" text="align: center" position="3.2 0 0"></a-text>
-					<a-text class="clickable" value="8" text="align: center" position="3.5 0 0"></a-text>
+					<a-text class="" value="4" text="align: center" position="2.9 0 0"></a-text>
+					<a-text class="" value="6" text="align: center" position="3.2 0 0"></a-text>
+					<a-text class="" value="8" text="align: center" position="3.5 0 0"></a-text>
 				</a-text>
-				<a-text class="clickable" id="optiesButton" value="OPTIES" position="0 1.5 -5" text="align: center;"></a-text>
-				<a-text class="clickable" value="LICENCIES" position="0 1 -5" text="align: center;"></a-text>
-				<a-entity environment="preset: forest; ground: noise; groundYScale: 5; groundTexture: walkernoise; skyType: color; skyColor: #87CEEB; fog: 0;"></a-entity
-			></a-entity>
-
+				<a-text startButton class="" id="optiesButton" value="OPTIES" position="0 1.5 -5" text="align: center;"></a-text>
+				<a-text class="" value="LICENCIES" position="0 1 -5" text="align: center;"></a-text>
+				<a-entity environment="preset: forest; ground: noise; groundYScale: 5; groundTexture: walkernoise; skyType: color; skyColor: #87CEEB; fog: 0;"></a-entity>
+			</a-entity>
 			<!-- tweede scene hieronder! -->
 			<a-entity id="js--winkelScene" visible="false">
 				<a-entity id="cameraRig2">
 					<!-- camera -->
-					<a-entity id="head2" camera="" wasd-controls="" look-controls="" position="0 1.6 0" rotation="" data-aframe-inspector-original-camera="" cursor="fuse: false; rayOrigin: mouse" raycaster="objects: .clickable; far: 50;"
-						><a-entity id="js--phone" phone obj-model="obj: #phone-obj; mtl: #phone-mtl" position="-0.5 0 -0.5" rotation="0 -10 0" scale="0.07 0.07 0.07">
+					<a-entity id="head2" camera="" wasd-controls="" look-controls="" position="0 1.6 0" rotation="" data-aframe-inspector-original-camera="" cursor="fuse: false; rayOrigin: mouse" raycaster="interval: 750 ; objects: .clickable; far: 50;">
+						<a-text id="js--score" color="black" value="0" position="0.75 0.75 -1"></a-text>
+
+						<!-- <a-entity id="js--phone" phone obj-model="obj: #phone-obj; mtl: #phone-mtl" position="-0.5 0 -0.5" rotation="0 -10 0" scale="0.07 0.07 0.07">
 							<a-text id="js--phone-text" value="12:00" align="center" color="white" scale="2" phoneTime position="0.5 2.25 0" rotation="0 90 0"></a-text>
-							<a-text id="js--phone-shoppinglist" align="center" color="black" scale="1.5" phoneTime position="0.5 1 0" rotation="0 90 0"></a-text
-						></a-entity>
+							<a-text id="js--phone-shoppinglist" align="center" color="black" scale="1.5" position="0.5 1 0" rotation="0 90 0"></a-text>
+							<a-box color="red" class="js--checkmark" position="1 1.5 1.2" scale="0.1 0.1 0.1"></a-box>
+							<a-box color="red" class="js--checkmark" position="1 1.3 1.2" scale="0.1 0.1 0.1"></a-box>
+							<a-box color="red" class="js--checkmark" position="1 1.07 1.2" scale="0.1 0.1 0.1"></a-box>
+							<a-box color="red" class="js--checkmark" position="1 0.87 1.2" scale="0.1 0.1 0.1"></a-box>
+							<a-box color="red" class="js--checkmark" position="1 0.62 1.2" scale="0.1 0.1 0.1"></a-box>
+							<a-box color="red" class="js--checkmark" position="1 0.37 1.2" scale="0.1 0.1 0.1"></a-box>
+						</a-entity> -->
 						<!-- hand controls -->
-						<a-entity id="left-hand2" oculus-touch-controls="hand: left"></a-entity>
-						<!--teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; collisionEntities: .muur; curveShootingSpeed:10;"-->
-						<a-entity id="right-hand2" laser-controls="hand: right" raycaster="objects: .clickable; far: infinite" line="opacity: 0.5"></a-entity>
+						<a-entity id="left-hand2" teleport-controls="cameraRig: #cameraRig2; teleportOrigin: #head2; button: trigger; collisionEntities: .js--welLopen; curveShootingSpeed:5;" oculus-touch-controls="hand: left"></a-entity>
+
+						<a-entity id="right-hand2" laser-controls="hand: right" raycaster="interval: 750; objects: .clickable; far: infinite" line="opacity: 0.5"></a-entity>
 					</a-entity>
 				</a-entity>
-				<a-entity
-					environment="preset: forest; ground: noise; groundYScale: 5; groundTexture: walkernoise; skyType: color; skyColor: #87CEEB; fog: 0;" position='0 -0.08 0'></a-entity>
-					<a-plane class="js--welLopen" color="green" height="12.5" width="2" position="0 0 -5.25" rotation="-90 0 0"></a-plane>
-					<a-plane class="js--welLopen" color="green" height="12" width="2" position="7 0 -5" rotation="-90 0 0"></a-plane>
-					<a-plane class="js--welLopen" color="green" height="2.5" width="5" position="3.5 0 -6.25" rotation="-90 0 0"></a-plane>
-					<a-plane class="js--welLopen" color="green" height="2.5" width="5" position="3.5 0 -0.75" rotation="-90 0 0"></a-plane>
-					<a-plane class="js--welLopen" color="green" height="2.5" width="5" position="3.5 0 -9.75" rotation="-90 0 0"></a-plane>
-					<a-plane class="js--welLopen" color="green" height="3" width="1.8" position="3.5 0 -3.5" rotation="-90 0 0"></a-plane>
+				<a-entity environment="preset: forest; ground: noise; groundYScale: 5; groundTexture: walkernoise; skyType: color; skyColor: #87CEEB; fog: 0;" position="0 -0.08 0"></a-entity>
+				<a-plane class="js--welLopen" color="#f3dbc4" height="12.5" width="2" position="0 0 -5.25" rotation="-90 0 0"></a-plane>
+				<a-plane class="js--welLopen" color="#f3dbc4" height="12" width="2" position="7 0 -5" rotation="-90 0 0"></a-plane>
+				<a-plane class="js--welLopen" color="#f3dbc4" height="2.5" width="5" position="3.5 0 -6.25" rotation="-90 0 0"></a-plane>
+				<a-plane class="js--welLopen" color="#f3dbc4" height="2.5" width="5" position="3.5 0 -0.75" rotation="-90 0 0"></a-plane>
+				<a-plane class="js--welLopen" color="#f3dbc4" height="2.5" width="5" position="3.5 0 -9.75" rotation="-90 0 0"></a-plane>
+				<a-plane class="js--welLopen" color="#f3dbc4" height="3" width="1.8" position="3.5 0 -3.5" rotation="-90 0 0"></a-plane>
 
-					<!-- niet beloopbare grond -->
-					<a-plane class="js--nietLopen" color="red" height="0.5" width="0.5" position="8.25 0 -11.25" rotation="-90 0 0"></a-plane>
-					<a-plane class="js--nietLopen" color="red" height="10.5" width="2" position="-2.5 0 -3.75" rotation="-90 0 0"></a-plane>
-					<a-plane class="js--nietLopen" color="red" height="0.5" width="1" position="1.5 0 0.75" rotation="-90 0 0"></a-plane>
-					<a-plane class="js--nietLopen" color="red" height="0.5" width="2" position="-0 0 1.25" rotation="-90 0 0"></a-plane>
+				<!-- niet beloopbare grond -->
+				<a-plane class="js--nietLopen" color="#f3dbc4" height="0.5" width="0.5" position="8.25 0 -11.25" rotation="-90 0 0"></a-plane>
+				<a-plane class="js--nietLopen" color="#f3dbc4" height="10.5" width="2" position="-2.5 0 -3.75" rotation="-90 0 0"></a-plane>
+				<a-plane class="js--nietLopen" color="#f3dbc4" height="0.5" width="1" position="1.5 0 0.75" rotation="-90 0 0"></a-plane>
+				<a-plane class="js--nietLopen" color="#f3dbc4" height="0.5" width="2" position="-0 0 1.25" rotation="-90 0 0"></a-plane>
 
-					<!-- afrekenen -->
-					<a-plane class="js--kassaVloer" color="gold" height="1.5" width="0.5" position="-1.25 0 -9.75" rotation="-90 0 0"></a-plane>
-					<a-plane class="js--kassaVloer" color="gold" height="1.5" width="2" position="-2.5 0 -9.75" rotation="-90 0 0"></a-plane>
+				<!-- afrekenen -->
+				<a-plane class="js--kassaVloer" color="#f3dbc4" height="1.5" width="0.5" position="-1.25 0 -9.75" rotation="-90 0 0"></a-plane>
+				<a-plane class="js--kassaVloer" color="#f3dbc4" height="1.5" width="2" position="-2.5 0 -9.75" rotation="-90 0 0"></a-plane>
 
-					<!-- zuivel -->
-					<a-obj-model src="#kast-7-obj" mtl="#kast-7-mtl" position="8.25 0 -7.5" scale="0.5 0.5 0.5"></a-obj-model>
+				<a-entity id="js--phone" phone obj-model="obj: #phone-obj; mtl: #phone-mtl" position="-1 1.2 -2.5" rotation="0 0 0" scale="0.4 0.4 0.4">
+					<a-text id="js--phone-text" value="12:00" align="center" color="white" scale="2" phoneTime position="0.5 2.25 0" rotation="0 90 0"></a-text>
+					<a-text id="js--phone-shoppinglist" align="center" color="black" scale="1.5" position="0.27 1 0" rotation="0 90 0"></a-text>
+					<a-box color="red" class="js--checkmark" position="0.25 1.5 1.2" scale="0.1 0.1 0.1"></a-box>
+					<a-box color="red" class="js--checkmark" position="0.25 1.3 1.2" scale="0.1 0.1 0.1"></a-box>
+					<a-box color="red" class="js--checkmark" position="0.25 1.07 1.2" scale="0.1 0.1 0.1"></a-box>
+					<a-box color="red" class="js--checkmark" position="0.25 0.87 1.2" scale="0.1 0.1 0.1"></a-box>
+					<a-box color="red" class="js--checkmark" position="0.25 0.62 1.2" scale="0.1 0.1 0.1"></a-box>
+					<a-box color="red" class="js--checkmark" position="0.25 0.37 1.2" scale="0.1 0.1 0.1"></a-box>
+				</a-entity>
 
-					<!-- vleeswaren -->
-					<a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="8.25 0 -1.5" scale="0.5 0.5 0.5"></a-obj-model>
+				<!-- zuivel -->
+				<!-- <a-obj-model src="#kast-7-obj" mtl="#kast-7-mtl" position="8.25 0 -7.5" scale="0.5 0.5 0.5"></a-obj-model> -->
 
-					<!-- drinken -->
-					<a-obj-model src="#kast-7-obj" mtl="#kast-7-mtl" position="4.5 0 -11.25" scale="0.5 0.5 0.5" rotation="0 90 0"></a-obj-model>
+				<!-- vleeswaren -->
+				<!-- <a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="8.25 0 -1.5" scale="0.5 0.5 0.5"></a-obj-model> -->
 
-					<!-- houdbaar -->
-					<a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="3.5 0 -7.75" scale="0.5 0.5 0.5" rotation="0 90 0">
-						<a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -4.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -3.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -2.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -1.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -0.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 0.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 1.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 2.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 3.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 4.5" scale="0.2 0.2 0.2"></a-obj-model>
+				<!-- koelshcap -->
+				<a-obj-model src="#kast-12-obj" mtl="#kast-12-mtl" position="8.25 0 -5" scale="0.5 0.5 0.5"></a-obj-model>
 
-						<a-entity pickup gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 -4.3" scale="0.25 0.25 0.25"></a-entity>
-						<a-entity pickup gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 -3.1" scale="0.25 0.25 0.25"></a-entity>
-						<a-entity pickup gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 -1.9" scale="0.25 0.25 0.25"></a-entity>
-						<a-entity pickup gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 -0.7" scale="0.25 0.25 0.25"></a-entity>
-						<a-entity pickup gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 0.5" scale="0.25 0.25 0.25"></a-entity>
-						<a-entity pickup gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 1.7" scale="0.25 0.25 0.25"></a-entity>
-						<a-entity pickup gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 2.9" scale="0.25 0.25 0.25"></a-entity>
-						<a-entity pickup gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 4.1" scale="0.25 0.25 0.25"></a-entity>
-					</a-obj-model>
+				<!-- drinken -->
+				<a-obj-model src="#kast-7-obj" mtl="#kast-7-mtl" position="4.5 0 -11.25" scale="0.5 0.5 0.5" rotation="0 90 0"></a-obj-model>
 
-					<!-- snacks -->
-					<a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="3.5 0 -8.25" scale="0.5 0.5 0.5" rotation="0 -90 0">
-						<a-obj-model pickup class="js--shopItem" src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 2.8 -4.5" scale="0.2 0.2 0.2" ></a-obj-model>
-						<a-obj-model class="js--shopItem" src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 2.8 -3.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model class="js--shopItem" src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 2.8 -2.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model class="js--shopItem" src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 2.8 -1.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model class="js--shopItem" src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 2.8 -0.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model class="js--shopItem" src="#chips-naturel-obj" mtl="#chips-paprika-mtl" position="0 2.8 0.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model class="js--shopItem" src="#chips-naturel-obj" mtl="#chips-paprika-mtl" position="0 2.8 1.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model class="js--shopItem" src="#chips-naturel-obj" mtl="#chips-paprika-mtl" position="0 2.8 2.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model class="js--shopItem" src="#chips-naturel-obj" mtl="#chips-paprika-mtl" position="0 2.8 3.5" scale="0.2 0.2 0.2"></a-obj-model>
-						<a-obj-model class="js--shopItem" src="#chips-naturel-obj" mtl="#chips-paprika-mtl" position="0 2.8 4.5" scale="0.2 0.2 0.2"></a-obj-model>
-					</a-obj-model>
+				<!-- houdbaar -->
+				<a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="3.5 0 -7.75" scale="0.5 0.5 0.5" rotation="0 90 0">
+					<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -4.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -3.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -2.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -1.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -0.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 0.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 1.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 2.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 3.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 4.5" scale="0.2 0.2 0.2"></a-obj-model>
 
-					<!-- brood -->
-					<a-obj-model src="#kast-4-obj" mtl="#kast-4-mtl" position="4 0 0.75" scale="0.5 0.5 0.5" rotation="0 -90 0"></a-obj-model>
+					<a-entity pickup class="clickable spaghetti" gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 -4.3" scale="0.25 0.25 0.25"></a-entity>
+					<a-entity pickup class="clickable spaghetti" gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 -3.1" scale="0.25 0.25 0.25"></a-entity>
+					<a-entity pickup class="clickable spaghetti" gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 -1.9" scale="0.25 0.25 0.25"></a-entity>
+					<a-entity pickup class="clickable spaghetti" gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 -0.7" scale="0.25 0.25 0.25"></a-entity>
+					<a-entity pickup class="clickable spaghetti" gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 0.5" scale="0.25 0.25 0.25"></a-entity>
+					<a-entity pickup class="clickable spaghetti" gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 1.7" scale="0.25 0.25 0.25"></a-entity>
+					<a-entity pickup class="clickable spaghetti" gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 2.9" scale="0.25 0.25 0.25"></a-entity>
+					<a-entity pickup class="clickable spaghetti" gltf-model="#spaghetti" material="transparent: true;" position="0 1.48 4.1" scale="0.25 0.25 0.25"></a-entity>
+				</a-obj-model>
 
-					<!-- groente -->
-					<a-obj-model src="#vers-obj" mtl="#vers-mtl" position="1.8 0 -3.5" scale="0.5 0.5 0.5" rotation="0 -90 0">
-            <a-obj-model pickup  class="clickable" src="#kip-obj" mtl="#kip-mtl" position="0 0 3" scale="0.2 0.2 0.2"></a-obj-model>
+				<!-- snacks -->
+				<a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="3.5 0 -8.25" scale="0.5 0.5 0.5" rotation="0 -90 0">
+					<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 -4.5" scale="0.1 0.1 0.1"></a-obj-model>
+					<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 -3.5" scale="0.1 0.1 0.1"></a-obj-model>
+					<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 -2.5" scale="0.1 0.1 0.1"></a-obj-model>
+					<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 -1.5" scale="0.1 0.1 0.1"></a-obj-model>
+					<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 -0.5" scale="0.1 0.1 0.1"></a-obj-model>
+					<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 0.5" scale="0.1 0.1 0.1"></a-obj-model>
+					<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 1.5" scale="0.1 0.1 0.1"></a-obj-model>
+					<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 2.5" scale="0.1 0.1 0.1"></a-obj-model>
+					<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 3.5" scale="0.1 0.1 0.1"></a-obj-model>
+					<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 4.5" scale="0.1 0.1 0.1"></a-obj-model>
 
-          </a-obj-model>
+					<a-obj-model pickup class="clickable chocolade" src="#chocolade-obj" mtl="#chocolade-mtl" position="0 1.48 -4.3" scale="0.08 0.08 0.08"></a-obj-model>
+					<a-obj-model pickup class="clickable chocolade" src="#chocolade-obj" mtl="#chocolade-mtl" position="0 1.48 -3.1" scale="0.08 0.08 0.08"></a-obj-model>
+					<a-obj-model pickup class="clickable chocolade" src="#chocolade-obj" mtl="#chocolade-mtl" position="0 1.48 -1.9" scale="0.08 0.08 0.08"></a-obj-model>
+					<a-obj-model pickup class="clickable chocolade" src="#chocolade-obj" mtl="#chocolade-mtl" position="0 1.48 -0.7" scale="0.08 0.08 0.08"></a-obj-model>
+					<a-obj-model pickup class="clickable chocolade" src="#chocolade-obj" mtl="#chocolade-mtl" position="0 1.48 0.5" scale="0.08 0.08 0.08"></a-obj-model>
+					<a-obj-model pickup class="clickable chocolade" src="#chocolade-obj" mtl="#chocolade-mtl" position="0 1.48 1.7" scale="0.08 0.08 0.08"></a-obj-model>
+					<a-obj-model pickup class="clickable chocolade" src="#chocolade-obj" mtl="#chocolade-mtl" position="0 1.48 2.9" scale="0.08 0.08 0.08"></a-obj-model>
+					<a-obj-model pickup class="clickable chocolade" src="#chocolade-obj" mtl="#chocolade-mtl" position="0 1.48 4.1" scale="0.08 0.08 0.08"></a-obj-model>
 
-					<!-- vlees/vis -->
-					<a-obj-model src="#vers-obj" mtl="#vers-mtl" position="5.2 0 -3.5" scale="0.5 0.5 0.5" rotation="0 -90 0"></a-obj-model>
+					<a-obj-model pickup class="clickable chips-naturel" src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 0.13 -4.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable chips-naturel" src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 0.13 -3.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable chips-naturel" src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 0.13 -2.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable chips-naturel" src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 0.13 -1.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable chips-naturel" src="#chips-naturel-obj" mtl="#chips-naturel-mtl" position="0 0.13 -0.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable chips-paprika" src="#chips-paprika-obj" mtl="#chips-paprika-mtl" position="0 0.13 0.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable chips-paprika" src="#chips-paprika-obj" mtl="#chips-paprika-mtl" position="0 0.13 1.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable chips-paprika" src="#chips-paprika-obj" mtl="#chips-paprika-mtl" position="0 0.13 2.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable chips-paprika" src="#chips-paprika-obj" mtl="#chips-paprika-mtl" position="0 0.13 3.5" scale="0.2 0.2 0.2"></a-obj-model>
+					<a-obj-model pickup class="clickable chips-paprika" src="#chips-paprika-obj" mtl="#chips-paprika-mtl" position="0 0.13 4.5" scale="0.2 0.2 0.2"></a-obj-model>
+				</a-obj-model>
 
-					<!-- kassa -->
-					<a-box color="black" height="1" width="2.5" depth="1" position="-2.25 0.5 -11"></a-box>
+				<!-- brood -->
+				<a-obj-model src="#kast-4-obj" mtl="#kast-4-mtl" position="4 0 0.75" scale="0.5 0.5 0.5" rotation="0 -90 0"></a-obj-model>
 
-					<!-- muren -->
-					<a-box color="grey" height="3" width="12.5" depth="0.5" position="2.75 1.5 -11.75"></a-box>
-					<a-box color="grey" height="3" width="0.5" depth="13.5" position="-3.75 1.5 -5.25"></a-box>
-					<a-box color="grey" height="3" width="0.5" depth="12.5" position="8.75 1.5 -5.25"></a-box>
-					<a-box color="grey" height="1" width="0.5" depth="10" position="-1.25 0.5 -4"></a-box>
-					<a-box color="grey" height="3" width="0.5" depth="0.5" position="-1.25 1.5 1.25"></a-box>
-					<a-box color="grey" height="3" width="8" depth="0.5" position="5 1.5 1.25"></a-box>
+				<!-- fruit -->
+				<a-obj-model src="#groente-obj" mtl="#groente-mtl" position="1.4 0 -3.5" scale="0.5 0.5 0.5">
+					<a-obj-model pickup class="clickable appel" src="#appel-obj" mtl="#appel-mtl" position="0.2 1.3 -2.45" scale="0.03 0.03 0.03" rotation="0 0 -20"></a-obj-model>
+					<a-obj-model pickup class="clickable appel" src="#appel-obj" mtl="#appel-mtl" position="0.2 1.3 -2.08" scale="0.03 0.03 0.03" rotation="0 0 -20"></a-obj-model>
+					<a-obj-model pickup class="clickable appel" src="#appel-obj" mtl="#appel-mtl" position="-0.177 1.163 -2.265" scale="0.03 0.03 0.03" rotation="0 0 -20"></a-obj-model>
+					<a-obj-model pickup class="clickable appel" src="#appel-obj" mtl="#appel-mtl" position="-0.534 1.023 -2.45" scale="0.03 0.03 0.03" rotation="0 0 -20"></a-obj-model>
+					<a-obj-model pickup class="clickable appel" src="#appel-obj" mtl="#appel-mtl" position="-0.534 1.023 -2.08" scale="0.03 0.03 0.03" rotation="0 0 -20"></a-obj-model>
+				</a-obj-model>
 
-					</a-entity>
+				<!-- groente -->
+				<a-obj-model src="#groente-obj" mtl="#groente-mtl" position="2.2 0 -3.5" scale="0.5 0.5 0.5" rotation="0 180 0">
+					<a-obj-model pickup class="clickable broccoli" src="#broccoli-obj" mtl="#broccoli-mtl" position="0.2 1.3 -2.45" scale="0.04 0.04 0.04" rotation="0 0 -50"></a-obj-model>
+					<a-obj-model pickup class="clickable broccoli" src="#broccoli-obj" mtl="#broccoli-mtl" position="0.2 1.3 -2.08" scale="0.04 0.04 0.04" rotation="0 0 -50"></a-obj-model>
+					<a-obj-model pickup class="clickable broccoli" src="#broccoli-obj" mtl="#broccoli-mtl" position="-0.177 1.163 -2.265" scale="0.04 0.04 0.04" rotation="0 0 -50"></a-obj-model>
+					<a-obj-model pickup class="clickable broccoli" src="#broccoli-obj" mtl="#broccoli-mtl" position="-0.534 1.023 -2.45" scale="0.04 0.04 0.04" rotation="0 0 -50"></a-obj-model>
+					<a-obj-model pickup class="clickable broccoli" src="#broccoli-obj" mtl="#broccoli-mtl" position="-0.534 1.023 -2.08" scale="0.04 0.04 0.04" rotation="0 0 -50"></a-obj-model>
+				</a-obj-model>
 
+				<!-- vlees/vis -->
+				<a-obj-model src="#vers-obj" mtl="#vers-mtl" position="5.2 0 -3.5" scale="0.5 0.5 0.5" rotation="0 -90 0">
+					<a-obj-model pickup class="clickable kip" src="#kip-obj" mtl="#kip-mtl" position="-2.329 1.347 0.559" scale="0.25 0.25 0.25"></a-obj-model>
+					<a-obj-model pickup class="clickable kip" src="#kip-obj" mtl="#kip-mtl" position="-1.536 1.347 0.559" scale="0.25 0.25 0.25"></a-obj-model>
+					<a-obj-model pickup class="clickable kip" src="#kip-obj" mtl="#kip-mtl" position="-0.743 1.347 0.559" scale="0.25 0.25 0.25"></a-obj-model>
+					<a-obj-model pickup class="clickable kip" src="#kip-obj" mtl="#kip-mtl" position="0.005 1.347 0.559" scale="0.25 0.25 0.25"></a-obj-model>
+					<a-obj-model pickup class="clickable kip" src="#kip-obj" mtl="#kip-mtl" position="0.843 1.347 0.559" scale="0.25 0.25 0.25"></a-obj-model>
+					<a-obj-model pickup class="clickable kip" src="#kip-obj" mtl="#kip-mtl" position="1.636 1.347 0.559" scale="0.25 0.25 0.25"></a-obj-model>
+					<a-obj-model pickup class="clickable kip" src="#kip-obj" mtl="#kip-mtl" position="2.429 1.347 0.559" scale="0.25 0.25 0.25"></a-obj-model>
+				</a-obj-model>
+
+				<!-- kassa -->
+				<a-box color="black" height="1" width="2.5" depth="1" position="-2.25 0.5 -11">
+					<a-obj-model src="#5euro-obj" mtl="#5euro-mtl" position="0.7 0.5 -0.06" scale="0.05 0.05 0.05" rotation="0 270 0"></a-obj-model>
+					<a-obj-model src="#10euro-obj" mtl="#10euro-mtl" position="1.1 0.5 -0.06" scale="0.05 0.05 0.05" rotation="0 270 0"></a-obj-model>
+					<a-obj-model src="#1euro-obj" mtl="#1euro-mtl" position="0.8 0.5 0.12" scale="0.05 0.05 0.05" rotation="0 180 0"></a-obj-model>
+					<a-obj-model src="#2euro-obj" mtl="#2euro-mtl" position="1 0.5 0.12" scale="0.05 0.05 0.05" rotation="0 180 0"></a-obj-model>
+					<a-obj-model src="#5cent-obj" mtl="#50cent-mtl" position="0.6 0.5 0.3" scale="0.025 0.025 0.025" rotation="0 180 0"></a-obj-model>
+					<a-obj-model src="#10cent-obj" mtl="#10cent-mtl" position="0.8 0.5 0.3" scale="0.03 0.03 0.03" rotation="0 180 0"></a-obj-model>
+					<a-obj-model src="#20cent-obj" mtl="#20cent-mtl" position="1 0.5 0.3" scale="0.035 0.035 0.035" rotation="0 180 0"></a-obj-model>
+					<a-obj-model src="#50cent-obj" mtl="#50cent-mtl" position="1.2 0.5 0.3" scale="0.04 0.04 0.04" rotation="0 180 0"></a-obj-model>
+				</a-box>
+
+				<!-- muren -->
+				<a-box color="grey" height="3" width="12.5" depth="0.5" position="2.75 1.5 -11.75"></a-box>
+				<a-box color="grey" height="3" width="0.5" depth="13.5" position="-3.75 1.5 -5.25"></a-box>
+				<a-box color="grey" height="3" width="0.5" depth="12.5" position="8.75 1.5 -5.25"></a-box>
+				<a-box color="grey" height="1" width="0.5" depth="10" position="-1.25 0.5 -4"></a-box>
+				<a-box color="grey" height="3" width="0.5" depth="0.5" position="-1.25 1.5 1.25"></a-box>
+				<a-box color="grey" height="3" width="8" depth="0.5" position="5 1.5 1.25"></a-box>
+			</a-entity>
 		</a-scene>
 	</body>
 </html>
