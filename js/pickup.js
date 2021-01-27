@@ -59,7 +59,7 @@ AFRAME.registerComponent("pickup", {
                         updateShoppingList(itemId[1]);
                         score = score + 100;
                         console.log(score)
-                        highscore.setAttribute('value', score);
+                        highscore.setAttribute('value', "Score: " + score);
                         itemCheck = true;
                     }
                 }
@@ -73,7 +73,7 @@ AFRAME.registerComponent("pickup", {
                 if((i == updatableList.length && itemCheck == false)){
                     console.log("fout")
                     score = score - 100;
-                    highscore.setAttribute('value', score);
+                    highscore.setAttribute('value', "Score: " + score);
                 }
         }
         })
