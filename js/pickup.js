@@ -14,7 +14,7 @@ AFRAME.registerComponent("pickup", {
             let list;
             for (let i = 0; i < updatableList.length; i++) {
                 if(updatableList[i] == itemName){
-                    checkmark[i].setAttribute('color', 'red');
+                    checkmark[i].setAttribute('color', 'green');
                 }
                 if(i === 0){
                     list = updatableList[0] + '\n';
@@ -29,7 +29,7 @@ AFRAME.registerComponent("pickup", {
             for(let i = 0; i<checkmark.length; i++){
                 colorArray[i] = checkmark[i].getAttribute('color');  
             }
-            if(colorArray.every(val => val === "red")){
+            if(colorArray.every(val => val === "green")){
                 enablePayment = true;
                 paymentText.setAttribute("value", "De prijs is: € "+totalPrice);
                 
@@ -59,7 +59,7 @@ AFRAME.registerComponent("pickup", {
                         updateShoppingList(itemId[1]);
                         score = score + 100;
                         console.log(score)
-                        highscore.setAttribute('value', score);
+                        highscore.setAttribute('value', "Score: " + score);
                         itemCheck = true;
                     }
                 }
@@ -73,7 +73,7 @@ AFRAME.registerComponent("pickup", {
                 if((i == updatableList.length && itemCheck == false)){
                     console.log("fout")
                     score = score - 100;
-                    highscore.setAttribute('value', score);
+                    highscore.setAttribute('value', "Score: " + score);
                 }
         }
         })
