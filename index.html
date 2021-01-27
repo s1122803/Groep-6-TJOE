@@ -6,6 +6,7 @@
 		<script type="text/javascript" src="./js/main.js"></script>
 		<script type="text/javascript" src="./js/phone-time.js"></script>
 		<script type="text/javascript" src="./js/pickup.js"></script>
+		<script type="text/javascript" src="./js/payment.js"></script>
 		<script type="text/javascript" src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"
 		></script>
 
@@ -115,7 +116,7 @@
 						<!-- hand controls -->
 						<a-entity id="left-hand2" teleport-controls="cameraRig: #cameraRig2; teleportOrigin: #head2; button: trigger; collisionEntities: .js--welLopen; curveShootingSpeed:5;" oculus-touch-controls="hand: left"></a-entity>
 
-						<a-entity id="right-hand2" laser-controls="hand: right" raycaster="interval: 750; objects: .clickable; far: infinite" line="opacity: 0.5"></a-entity>
+						<a-entity id="right-hand2" laser-controls="hand: right" raycaster="interval: 1000; objects: .clickable; far: infinite" line="opacity: 0.5"></a-entity>
 					</a-entity>
 				</a-entity>
 				<a-entity
@@ -253,14 +254,14 @@
 
 					<!-- kassa -->
 					<a-box color="black" height="1" width="2.5" depth="1" position="-2.25 0.5 -11">
-						<a-obj-model src="#5euro-obj" mtl="#5euro-mtl" position="0.7 0.5 -0.06" scale="0.05 0.05 0.05" rotation="0 270 0"></a-obj-model>
-						<a-obj-model src="#10euro-obj" mtl="#10euro-mtl" position="1.1 0.5 -0.06" scale="0.05 0.05 0.05" rotation="0 270 0"></a-obj-model>
-						<a-obj-model src="#1euro-obj" mtl="#1euro-mtl" position="0.8 0.5 0.12" scale="0.05 0.05 0.05" rotation="0 180 0"></a-obj-model>
-						<a-obj-model src="#2euro-obj" mtl="#2euro-mtl" position="1 0.5 0.12" scale="0.05 0.05 0.05" rotation="0 180 0"></a-obj-model>
-						<a-obj-model src="#5cent-obj" mtl="#50cent-mtl" position="0.6 0.5 0.3" scale="0.025 0.025 0.025" rotation="0 180 0"></a-obj-model>
-						<a-obj-model src="#10cent-obj" mtl="#10cent-mtl" position="0.8 0.5 0.3" scale="0.03 0.03 0.03" rotation="0 180 0"></a-obj-model>
-						<a-obj-model src="#20cent-obj" mtl="#20cent-mtl" position="1 0.5 0.3" scale="0.035 0.035 0.035" rotation="0 180 0"></a-obj-model>
-						<a-obj-model src="#50cent-obj" mtl="#50cent-mtl" position="1.2 0.5 0.3" scale="0.04 0.04 0.04" rotation="0 180 0"></a-obj-model>
+						<a-obj-model payment class="clickable 5euro" src="#5euro-obj" mtl="#5euro-mtl" position="0.7 0.5 -0.06" scale="0.05 0.05 0.05" rotation="0 270 0"></a-obj-model>
+						<a-obj-model payment class="clickable 10euro" src="#10euro-obj" mtl="#10euro-mtl" position="1.1 0.5 -0.06" scale="0.05 0.05 0.05" rotation="0 270 0"></a-obj-model>
+						<a-obj-model payment class="clickable 1euro" src="#1euro-obj" mtl="#1euro-mtl" position="0.8 0.5 0.12" scale="0.05 0.05 0.05" rotation="0 180 0"></a-obj-model>
+						<a-obj-model payment class="clickable 2euro" src="#2euro-obj" mtl="#2euro-mtl" position="1 0.5 0.12" scale="0.05 0.05 0.05" rotation="0 180 0"></a-obj-model>
+						<a-obj-model payment class="clickable 5cent" src="#5cent-obj" mtl="#50cent-mtl" position="0.6 0.5 0.3" scale="0.025 0.025 0.025" rotation="0 180 0"></a-obj-model>
+						<a-obj-model payment class="clickable 10cent" src="#10cent-obj" mtl="#10cent-mtl" position="0.8 0.5 0.3" scale="0.03 0.03 0.03" rotation="0 180 0"></a-obj-model>
+						<a-obj-model payment class="clickable 20cent" src="#20cent-obj" mtl="#20cent-mtl" position="1 0.5 0.3" scale="0.035 0.035 0.035" rotation="0 180 0"></a-obj-model>
+						<a-obj-model payment class="clickable 50cent" src="#50cent-obj" mtl="#50cent-mtl" position="1.2 0.5 0.3" scale="0.04 0.04 0.04" rotation="0 180 0"></a-obj-model>
 					</a-box>
 
 					<!-- muren -->

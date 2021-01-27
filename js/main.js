@@ -2,7 +2,7 @@
 
 	// Alle items en de prijzen ervan (Prijzen van de items moeten op dezeflde positie in de array staan)
 	const shopItemList = ['pastasaus', 'spaghetti', 'pringles', 'chocolade', 'chips-naturel', 'chips-paprika', 'kip', 'appel', 'broccoli', 'brood', 'banaan', 'koek', 'sla'];
-	const shopPriceList = [2.99, 1.35, 2.09, 2,89, 0.99, 0.99, 6.69, 0.60, 1.49, 1.99, 0.99, 1.49, 0.99];
+	const shopPriceList = [2.99, 1.35, 2.09, 2.89, 0.99, 0.99, 6.69, 0.60, 1.49, 1.99, 0.99, 1.49, 0.99];
 	let shoppingCartArray = ['', '', '', '', '', '', '', ''];
 	let updatableList;
 	let rawList = shopItemList;
@@ -10,6 +10,9 @@
 	let listArray = '';
 	let priceArray = '';
 	let addListenerOnce = false;
+	let totalPayment = 0.00;
+	let totalPrice = 0.00;
+	let score = 1000;
 
 window.onload = () => {
 	const phoneList = document.getElementById('js--phone-shoppinglist');
@@ -29,23 +32,23 @@ window.onload = () => {
     startButton.addEventListener('click', function () {
       menuScene.setAttribute('visible', 'false');
       winkelScene.setAttribute('visible', 'true');
-    });
-		let phonePos = 0;
-		this.addEventListener('keydown', function (event) {
-			if (event.key === 'r' && phonePos === 0) {
-				phone.setAttribute('position', '0 0 -0.5');
-				phone.setAttribute('rotation', '0 -90 0');
-				phone.setAttribute('scale', '0.1 0.1 0.1');
-				phonePos = 1;
-				return;
-			} else if (event.key === 'r' && phonePos === 1) {
-				phone.setAttribute('position', '-0.5 0 -0.5');
-				phone.setAttribute('rotation', '0 -10 0');
-				phone.setAttribute('scale', '0.07 0.07 0.07');
-				phonePos = 0;
-				return;
-			}
-		});
+	});
+		// let phonePos = 0;
+		// this.addEventListener('keydown', function (event) {
+		// 	if (event.key === 'r' && phonePos === 0) {
+		// 		phone.setAttribute('position', '0 0 -0.5');
+		// 		phone.setAttribute('rotation', '0 -90 0');
+		// 		phone.setAttribute('scale', '0.1 0.1 0.1');
+		// 		phonePos = 1;
+		// 		return;
+		// 	} else if (event.key === 'r' && phonePos === 1) {
+		// 		phone.setAttribute('position', '-0.5 0 -0.5');
+		// 		phone.setAttribute('rotation', '0 -10 0');
+		// 		phone.setAttribute('scale', '0.07 0.07 0.07');
+		// 		phonePos = 0;
+		// 		return;
+		// 	}
+		// });
 	}
 
   addListeners();
@@ -81,17 +84,7 @@ window.onload = () => {
 			rawTotal = rawTotal + parseFloat(priceList[i]);
 		}
 		totalPrice = rawTotal.toFixed(2);
+		console.log(totalPrice)
 	}
 	setShoppinglist();
-
-	// Functie om shoppinglist te updaten - ! W.I.P. !
-
-	function updateShoppingList() {
-		let list = updatableList[0] + '\n';
-		for (let i = 1; i < updatableList.length; i++) {
-			list = list + updatableList[i] + '\n';
-		}
-		shoppinglist.setAttribute('value', list);
-		console.log(list, ' test');
-	}
 };

@@ -4,9 +4,11 @@ AFRAME.registerComponent("pickup", {
         const checkmark = document.getElementsByClassName('js--checkmark');
         const highscore = document.getElementById('js--score');
         const plopSound = new Audio("../sound/plop.mp3");
+        plopSound.loop = false;
+        plopSound.currentTime = 0.9;
         plopSound.volume = 0.2;
-        let score = 0;
         let itemCheck = false;
+        let timeout = false;
         const updateShoppingList = (itemName) => {
             let list;
             for (let i = 0; i < updatableList.length; i++) {
@@ -22,6 +24,16 @@ AFRAME.registerComponent("pickup", {
             }
             itemCheck = true;
             phoneList.setAttribute('value', list);
+            let colorArray = [];
+            for(let i = 0; i<checkmark.length; i++){
+                colorArray[i] = checkmark[i].getAttribute('color');  
+            }
+            if(colorArray.every(val => val === "green")){
+
+            }
+            // console.log("Check if true/false:  ",colorArray.every(val => val === "green"))
+
+
                 // for (let i = 0; i < 7; i++) {
                 //     if (itemArray[i] === '') {
                 //         itemArray[i] =  "item";
@@ -34,7 +46,9 @@ AFRAME.registerComponent("pickup", {
         }
        this.addCompListener = () => {
         this.el.addEventListener('click', function () {
-            let itemId = this.getAttribute('class').split(' ');
+            if(timeout === false){
+                timeout = true;
+                let itemId = this.getAttribute('class').split(' ');
             let itemCheck = 0;
                 for(let i = 0; i<updatableList.length; i++){
                     if(itemId[1] == updatableList[i] &&  checkmark[i].getAttribute('color') == "red"){
@@ -46,17 +60,23 @@ AFRAME.registerComponent("pickup", {
                         itemCheck = true;
                     }
                 }
-                this.setAttribute('animation', 'property: scale; to: 0 0 0; dur: 750; easing: linear; loop: false');
+                this.setAttribute('animation', 'property: scale; to: 0 0 0; dur: 500; easing: linear; loop: false');
+                
                 plopSound.play();
                 setTimeout(function(){
                     this.remove;
-                },760);
+                    timeout = false;
+                },510);
                 if((i == updatableList.length && itemCheck == false)){
                     console.log("fout")
                     score = score - 100;
                     highscore.setAttribute('value', score);
                 }
-        });
+        }
+        })
+           
+    
+            
     }
     
     },
