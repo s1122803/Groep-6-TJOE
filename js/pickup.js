@@ -4,7 +4,7 @@ AFRAME.registerComponent("pickup", {
         const checkmark = document.getElementsByClassName('js--checkmark');
         const highscore = document.getElementById('js--score');
         const plopSound = new Audio("../sound/plop.mp3");
-        plopSound.volume = 0.3;
+        plopSound.volume = 0.2;
         let score = 0;
         let itemCheck = false;
         const updateShoppingList = (itemName) => {
@@ -46,11 +46,11 @@ AFRAME.registerComponent("pickup", {
                         itemCheck = true;
                     }
                 }
-                this.setAttribute('animation', 'property: scale; to: 0 0 0; dur: 500; easing: linear; loop: false');
+                this.setAttribute('animation', 'property: scale; to: 0 0 0; dur: 750; easing: linear; loop: false');
                 plopSound.play();
                 setTimeout(function(){
                     this.remove;
-                },510);
+                },760);
                 if((i == updatableList.length && itemCheck == false)){
                     console.log("fout")
                     score = score - 100;
