@@ -12,7 +12,7 @@
 	let addListenerOnce = false;
 	let totalPayment = 0.00;
 	let totalPrice = 0.00;
-	let score = 1000;
+	let score = 0;
 	let enablePayment = false;
 	let disableTick = false;
 
