@@ -26,18 +26,24 @@
 				<a-asset-item id="pastasaus-mtl" src="obj\pastasaus.mtl"></a-asset-item>
 				<a-asset-item id="phone-obj" src="img\telefoon.obj"></a-asset-item>
 				<a-asset-item id="phone-mtl" src="img\telefoon.mtl"></a-asset-item>
-				<a-asset-item id="kast-5-obj" src="obj\kast_5.obj"></a-asset-item>
-				<a-asset-item id="kast-5-mtl" src="obj\kast_5.mtl"></a-asset-item>
+
 				<a-asset-item id="kast-7-obj" src="obj\kast_7.obj"></a-asset-item>
 				<a-asset-item id="kast-7-mtl" src="obj\kast_7.mtl"></a-asset-item>
-				<a-asset-item id="kast-4-obj" src="obj\kast_4.obj"></a-asset-item>
-				<a-asset-item id="kast-4-mtl" src="obj\kast_4.mtl"></a-asset-item>
+				<a-asset-item id="brood_kast-obj" src="obj\brood_kast.obj"></a-asset-item>
+				<a-asset-item id="brood_kast-mtl" src="obj\brood_kast.mtl"></a-asset-item>
 				<a-asset-item id="kast-12-obj" src="obj\kast_12.obj"></a-asset-item>
 				<a-asset-item id="kast-12-mtl" src="obj\kast_12.mtl"></a-asset-item>
 				<a-asset-item id="vers-obj" src="obj\vers.obj"></a-asset-item>
 				<a-asset-item id="vers-mtl" src="obj\vers.mtl"></a-asset-item>
-				<a-asset-item id="groente-obj" src="obj\groente_enkel.obj"></a-asset-item>
-				<a-asset-item id="groente-mtl" src="obj\groente_enkel.mtl"></a-asset-item>
+				<a-asset-item id="groente-obj" src="obj\groente.obj"></a-asset-item>
+				<a-asset-item id="groente-mtl" src="obj\groente.mtl"></a-asset-item>
+				<a-asset-item id="fruit-obj" src="obj\fruit.obj"></a-asset-item>
+				<a-asset-item id="fruit-mtl" src="obj\fruit.mtl"></a-asset-item>
+				<a-asset-item id="houdbaar-obj" src="obj\houdbaar.obj"></a-asset-item>
+				<a-asset-item id="houdbaar-mtl" src="obj\houdbaar.mtl"></a-asset-item>
+				<a-asset-item id="snacks-obj" src="obj\snacks.obj"></a-asset-item>
+				<a-asset-item id="snacks-mtl" src="obj\snacks.mtl"></a-asset-item>
+
         <a-asset-item id="kip-obj" src="obj\kip.obj"></a-asset-item>
 				<a-asset-item id="kip-mtl" src="obj\kip.mtl"></a-asset-item>
 				<a-asset-item id="chocolade-obj" src="obj\chocoladev2.obj"></a-asset-item>
@@ -50,6 +56,10 @@
 				<a-asset-item id="broccoli-mtl" src="obj\broccoli.mtl"></a-asset-item>
 				<a-asset-item id="appel-obj" src="obj\appel.obj"></a-asset-item>
 				<a-asset-item id="appel-mtl" src="obj\appel.mtl"></a-asset-item>
+				<!-- <a-asset-item id="banaan-obj" src="obj\banaan.obj"></a-asset-item>
+				<a-asset-item id="banaan-mtl" src="obj\banaan.mtl"></a-asset-item> -->
+				<a-asset-item id="banaan-obj" src="obj\bananen.obj"></a-asset-item>
+				<a-asset-item id="banaan-mtl" src="obj\bananen.mtl"></a-asset-item>
 				<a-asset-item id="10euro-obj" src="obj\10euro.obj"></a-asset-item>
 				<a-asset-item id="10euro-mtl" src="obj\10euro.mtl"></a-asset-item>
 				<a-asset-item id="5euro-obj" src="obj\5euro.obj"></a-asset-item>
@@ -66,6 +76,8 @@
 				<a-asset-item id="10cent-mtl" src="obj\10cent.mtl"></a-asset-item>
 				<a-asset-item id="5cent-obj" src="obj\5cent.obj"></a-asset-item>
 				<a-asset-item id="5cent-mtl" src="obj\5cent.mtl"></a-asset-item>
+				<a-asset-item id="brood-obj" src="obj\brood.obj"></a-asset-item>
+				<a-asset-item id="brood-mtl" src="obj\brood.mtl"></a-asset-item>
 			</a-assets>
 			<!-- Start menu -->
 			<a-entity id="js--menuScene" visible="true">
@@ -99,7 +111,7 @@
 				<a-entity id="cameraRig2">
 					<!-- camera -->
 					<a-entity id="head2" camera="" wasd-controls="" look-controls="" position="0 1.6 0" rotation="" data-aframe-inspector-original-camera="" cursor="fuse: false; rayOrigin: mouse" raycaster="interval: 750 ; objects: .clickable; far: 50;">
-						<a-text id="js--score" color="black" value="0" position="0.75 0.75 -1" ></a-text>
+						<!-- <a-text id="js--score" color="black" value="0" position="0.75 0.75 -1" ></a-text> -->
 
 						<!-- <a-entity id="js--phone" phone obj-model="obj: #phone-obj; mtl: #phone-mtl" position="-0.5 0 -0.5" rotation="0 -10 0" scale="0.07 0.07 0.07">
 							<a-text id="js--phone-text" value="12:00" align="center" color="white" scale="2" phoneTime position="0.5 2.25 0" rotation="0 90 0"></a-text>
@@ -136,6 +148,9 @@
 					<a-plane class="js--kassaVloer" color="#f3dbc4" height="1.5" width="0.5" position="-1.25 0 -9.75" rotation="-90 0 0"></a-plane>
 					<a-plane class="js--kassaVloer" color="#f3dbc4" height="1.5" width="2" position="-2.5 0 -9.75" rotation="-90 0 0"></a-plane>
 
+					<a-text color="black" value="Score:" position="-1 2.2 -3.25" scale="1 1 1" rotation="0 90 0"></a-text>
+					<a-text id="js--score" color="black" value="0" position="-1 1.9 -3.25" scale="1.5 1.5 1.5" rotation="0 90 0"></a-text>
+
 					<a-entity id="js--phone" phone obj-model="obj: #phone-obj; mtl: #phone-mtl" position="-1 1.2 -2.5" rotation="0 0 0" scale="0.4 0.4 0.4">
 						<a-text id="js--phone-text" value="12:00" align="center" color="white" scale="2" phoneTime position="0.5 2.25 0" rotation="0 90 0"></a-text>
 						<a-text id="js--phone-shoppinglist" align="center" color="black" scale="1.5"  position="0.27 1 0" rotation="0 90 0"></a-text>
@@ -147,12 +162,6 @@
 						<a-box color="red" class="js--checkmark" position="0.25 0.37 1.2" scale="0.1 0.1 0.1"></a-box>
 					</a-entity>
 
-					<!-- zuivel -->
-					<!-- <a-obj-model src="#kast-7-obj" mtl="#kast-7-mtl" position="8.25 0 -7.5" scale="0.5 0.5 0.5"></a-obj-model> -->
-
-					<!-- vleeswaren -->
-					<!-- <a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="8.25 0 -1.5" scale="0.5 0.5 0.5"></a-obj-model> -->
-
 					<!-- koelshcap -->
 					<a-obj-model src="#kast-12-obj" mtl="#kast-12-mtl" position="8.25 0 -5" scale="0.5 0.5 0.5"></a-obj-model>
 
@@ -160,7 +169,7 @@
 					<a-obj-model src="#kast-7-obj" mtl="#kast-7-mtl" position="4.5 0 -11.25" scale="0.5 0.5 0.5" rotation="0 90 0"></a-obj-model>
 
 					<!-- houdbaar -->
-					<a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="3.5 0 -7.75" scale="0.5 0.5 0.5" rotation="0 90 0">
+					<a-obj-model src="#houdbaar-obj" mtl="#houdbaar-mtl" position="3.5 0 -7.75" scale="0.5 0.5 0.5" rotation="0 90 0">
 						<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -4.5" scale="0.2 0.2 0.2"></a-obj-model>
 						<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -3.5" scale="0.2 0.2 0.2"></a-obj-model>
 						<a-obj-model pickup class="clickable pastasaus" src="#pastasaus-obj" mtl="#pastasaus-mtl" position="0 0.13 -2.5" scale="0.2 0.2 0.2"></a-obj-model>
@@ -183,7 +192,7 @@
 					</a-obj-model>
 
 					<!-- snacks -->
-					<a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="3.5 0 -8.25" scale="0.5 0.5 0.5" rotation="0 -90 0">
+					<a-obj-model src="#snacks-obj" mtl="#snacks-mtl" position="3.5 0 -8.25" scale="0.5 0.5 0.5" rotation="0 -90 0">
 						<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 -4.5" scale="0.1 0.1 0.1" ></a-obj-model>
 						<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 -3.5" scale="0.1 0.1 0.1"></a-obj-model>
 						<a-obj-model pickup class="clickable pringles" src="#pringles-obj" mtl="#pringles-mtl" position="0 2.8 -2.5" scale="0.1 0.1 0.1"></a-obj-model>
@@ -214,20 +223,37 @@
 						<a-obj-model pickup class="clickable chips-paprika" src="#chips-paprika-obj" mtl="#chips-paprika-mtl" position="0 0.13 2.5" scale="0.2 0.2 0.2"></a-obj-model>
 						<a-obj-model pickup class="clickable chips-paprika" src="#chips-paprika-obj" mtl="#chips-paprika-mtl" position="0 0.13 3.5" scale="0.2 0.2 0.2"></a-obj-model>
 						<a-obj-model pickup class="clickable chips-paprika" src="#chips-paprika-obj" mtl="#chips-paprika-mtl" position="0 0.13 4.5" scale="0.2 0.2 0.2"></a-obj-model>
-
-
 					</a-obj-model>
 
 					<!-- brood -->
-					<a-obj-model src="#kast-4-obj" mtl="#kast-4-mtl" position="4 0 0.75" scale="0.5 0.5 0.5" rotation="0 -90 0"></a-obj-model>
+					<a-obj-model src="#brood_kast-obj" mtl="#brood_kast-mtl" position="4 0 0.75" scale="0.5 0.5 0.5" rotation="0 -90 0">
+						<a-obj-model pickup class="clickable brood" src="#brood-obj" mtl="#brood-mtl" position="-0.075 2.8 -3.1" scale="0.15 0.15 0.15" rotation="0 90 0"></a-obj-model>
+						<a-obj-model pickup class="clickable brood" src="#brood-obj" mtl="#brood-mtl" position="-0.075 2.8 -1.033" scale="0.15 0.15 0.15" rotation="0 90 0"></a-obj-model>
+						<a-obj-model pickup class="clickable brood" src="#brood-obj" mtl="#brood-mtl" position="-0.075 2.8 1.033" scale="0.15 0.15 0.15" rotation="0 90 0"></a-obj-model>
+						<a-obj-model pickup class="clickable brood" src="#brood-obj" mtl="#brood-mtl" position="-0.075 2.8 3.1" scale="0.15 0.15 0.15" rotation="0 90 0"></a-obj-model>
+
+						<a-obj-model pickup class="clickable brood" src="#brood-obj" mtl="#brood-mtl" position="-0.075 1.48 -3.1" scale="0.15 0.15 0.15" rotation="0 90 0"></a-obj-model>
+						<a-obj-model pickup class="clickable brood" src="#brood-obj" mtl="#brood-mtl" position="-0.075 1.48 -1.033" scale="0.15 0.15 0.15" rotation="0 90 0"></a-obj-model>
+						<a-obj-model pickup class="clickable brood" src="#brood-obj" mtl="#brood-mtl" position="-0.075 1.48 1.033" scale="0.15 0.15 0.15" rotation="0 90 0"></a-obj-model>
+						<a-obj-model pickup class="clickable brood" src="#brood-obj" mtl="#brood-mtl" position="-0.075 1.48 3.1" scale="0.15 0.15 0.15" rotation="0 90 0"></a-obj-model>
+
+						<a-obj-model pickup class="clickable brood" src="#brood-obj" mtl="#brood-mtl" position="-0.075 0.13 -3.1" scale="0.15 0.15 0.15" rotation="0 90 0"></a-obj-model>
+						<a-obj-model pickup class="clickable brood" src="#brood-obj" mtl="#brood-mtl" position="-0.075 0.13 -1.033" scale="0.15 0.15 0.15" rotation="0 90 0"></a-obj-model>
+						<a-obj-model pickup class="clickable brood" src="#brood-obj" mtl="#brood-mtl" position="-0.075 0.13 1.033" scale="0.15 0.15 0.15" rotation="0 90 0"></a-obj-model>
+						<a-obj-model pickup class="clickable brood" src="#brood-obj" mtl="#brood-mtl" position="-0.075 0.13 3.1" scale="0.15 0.15 0.15" rotation="0 90 0"></a-obj-model>
+					</a-obj-model>
 
 					<!-- fruit -->
-					<a-obj-model src="#groente-obj" mtl="#groente-mtl" position="1.4 0 -3.5" scale="0.5 0.5 0.5">
+					<a-obj-model src="#fruit-obj" mtl="#fruit-mtl" position="1.4 0 -3.5" scale="0.5 0.5 0.5">
 						<a-obj-model pickup class="clickable appel" src="#appel-obj" mtl="#appel-mtl" position="0.2 1.3 -2.45" scale="0.03 0.03 0.03" rotation="0 0 -20"></a-obj-model>
 						<a-obj-model pickup class="clickable appel" src="#appel-obj" mtl="#appel-mtl" position="0.2 1.3 -2.08" scale="0.03 0.03 0.03" rotation="0 0 -20"></a-obj-model>
 						<a-obj-model pickup class="clickable appel" src="#appel-obj" mtl="#appel-mtl" position="-0.177 1.163 -2.265" scale="0.03 0.03 0.03" rotation="0 0 -20"></a-obj-model>
 						<a-obj-model pickup class="clickable appel" src="#appel-obj" mtl="#appel-mtl" position="-0.534 1.023 -2.45" scale="0.03 0.03 0.03" rotation="0 0 -20"></a-obj-model>
 						<a-obj-model pickup class="clickable appel" src="#appel-obj" mtl="#appel-mtl" position="-0.534 1.023 -2.08" scale="0.03 0.03 0.03" rotation="0 0 -20"></a-obj-model>
+
+						<a-obj-model pickup class="clickable banaan" src="#banaan-obj" mtl="#banaan-mtl" position="0.107 1.215 -1.567" scale="0.35 0.35 0.35" rotation="0 0 0"></a-obj-model>
+						<a-obj-model pickup class="clickable banaan" src="#banaan-obj" mtl="#banaan-mtl" position="-0.205 1.163 -1.214" scale="0.35 0.35 0.35" rotation="0 0 0"></a-obj-model>
+						<a-obj-model pickup class="clickable banaan" src="#banaan-obj" mtl="#banaan-mtl" position="-0.495 1.023 -1.519" scale="0.35 0.35 0.35" rotation="0 0 0"></a-obj-model>
 					</a-obj-model>
 
 					<!-- groente -->
