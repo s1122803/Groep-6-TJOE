@@ -13,6 +13,8 @@
 	let totalPayment = 0.00;
 	let totalPrice = 0.00;
 	let score = 1000;
+	let enablePayment = false;
+	let disableTick = false;
 
 window.onload = () => {
 	const phoneList = document.getElementById('js--phone-shoppinglist');
@@ -83,8 +85,27 @@ window.onload = () => {
 		for (i = 0; i < priceList.length; i++) {
 			rawTotal = rawTotal + parseFloat(priceList[i]);
 		}
+		let priceSplit = rawTotal.toFixed(2).split('.');
+
+
 		totalPrice = rawTotal.toFixed(2);
-		console.log(totalPrice)
+
+		let pricePos = parseInt(priceSplit[priceSplit.length - 1]);
+
+		let priceDecimal = Math.ceil(pricePos / 5) * 5;
+		console.log(pricePos)
+		console.log("test "+ priceDecimal);
+		console.log("totale prijs"+totalPrice);
+	
+		if(priceDecimal < 10){
+			console.log(priceDecimal, "kleiner dan 10");
+			totalPrice = parseFloat(priceSplit[0] + "." + "0" + toString(priceDecimal));
+		}else{
+			totalPrice = parseFloat(priceSplit[0] + "." + priceDecimal);
+		}
+		totalPrice = parseFloat(priceSplit[0] + "." + priceDecimal);
+		console.log("TotalPrice = " + totalPrice.toFixed(2));
+
 	}
 	setShoppinglist();
 };

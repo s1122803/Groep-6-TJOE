@@ -1,6 +1,7 @@
 AFRAME.registerComponent("pickup", {
     init:function(){
         const phoneList = document.getElementById('js--phone-shoppinglist');
+        const paymentText = document.getElementById('js--payment-text');
         const checkmark = document.getElementsByClassName('js--checkmark');
         const highscore = document.getElementById('js--score');
         const plopSound = new Audio("../sound/plop.mp3");
@@ -13,7 +14,7 @@ AFRAME.registerComponent("pickup", {
             let list;
             for (let i = 0; i < updatableList.length; i++) {
                 if(updatableList[i] == itemName){
-                    checkmark[i].setAttribute('color', 'green');
+                    checkmark[i].setAttribute('color', 'red');
                 }
                 if(i === 0){
                     list = updatableList[0] + '\n';
@@ -28,8 +29,10 @@ AFRAME.registerComponent("pickup", {
             for(let i = 0; i<checkmark.length; i++){
                 colorArray[i] = checkmark[i].getAttribute('color');  
             }
-            if(colorArray.every(val => val === "green")){
-
+            if(colorArray.every(val => val === "red")){
+                enablePayment = true;
+                paymentText.setAttribute("value", "De prijs is: € "+totalPrice);
+                
             }
             // console.log("Check if true/false:  ",colorArray.every(val => val === "green"))
 

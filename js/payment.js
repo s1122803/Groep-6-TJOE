@@ -3,8 +3,8 @@ AFRAME.registerComponent("payment", {
         this.addPaymentListener = () => {
             this.el.addEventListener('click', function () {
                 let moneyId = this.getAttribute('class').split(' ');
-                console.log(moneyId[1]);
-
+                // console.log(moneyId[1]);
+                if(enablePayment == true){
                 switch(moneyId[1]){
                     case "10euro":
                         totalPayment += 10;
@@ -38,6 +38,7 @@ AFRAME.registerComponent("payment", {
                 }else{
                     console.log(Math.abs(totalPrice - totalPayment).toFixed(2))
                 }
+            }
                 
         });
     }
