@@ -51,6 +51,22 @@
 				<a-asset-item id="broccoli-mtl" src="obj\broccoli.mtl"></a-asset-item>
 				<a-asset-item id="appel-obj" src="obj\appel.obj"></a-asset-item>
 				<a-asset-item id="appel-mtl" src="obj\appel.mtl"></a-asset-item>
+				<a-asset-item id="10euro-obj" src="obj\10euro.obj"></a-asset-item>
+				<a-asset-item id="10euro-mtl" src="obj\10euro.mtl"></a-asset-item>
+				<a-asset-item id="5euro-obj" src="obj\5euro.obj"></a-asset-item>
+				<a-asset-item id="5euro-mtl" src="obj\5euro.mtl"></a-asset-item>
+				<a-asset-item id="2euro-obj" src="obj\2euro.obj"></a-asset-item>
+				<a-asset-item id="2euro-mtl" src="obj\2euro.mtl"></a-asset-item>
+				<a-asset-item id="1euro-obj" src="obj\1euro.obj"></a-asset-item>
+				<a-asset-item id="1euro-mtl" src="obj\1euro.mtl"></a-asset-item>
+				<a-asset-item id="50cent-obj" src="obj\50cent.obj"></a-asset-item>
+				<a-asset-item id="50cent-mtl" src="obj\50cent.mtl"></a-asset-item>
+				<a-asset-item id="20cent-obj" src="obj\20cent.obj"></a-asset-item>
+				<a-asset-item id="20cent-mtl" src="obj\20cent.mtl"></a-asset-item>
+				<a-asset-item id="10cent-obj" src="obj\10cent.obj"></a-asset-item>
+				<a-asset-item id="10cent-mtl" src="obj\10cent.mtl"></a-asset-item>
+				<a-asset-item id="5cent-obj" src="obj\5cent.obj"></a-asset-item>
+				<a-asset-item id="5cent-mtl" src="obj\5cent.mtl"></a-asset-item>
 			</a-assets>
 			<!-- Start menu -->
 			<a-entity id="js--menuScene" visible="true">
@@ -85,8 +101,8 @@
 					<!-- camera -->
 					<a-entity id="head2" camera="" wasd-controls="" look-controls="" position="0 1.6 0" rotation="" data-aframe-inspector-original-camera="" cursor="fuse: false; rayOrigin: mouse" raycaster="interval: 750 ; objects: .clickable; far: 50;">
 						<a-text id="js--score" color="black" value="0" position="0.75 0.75 -1" ></a-text>
-			
-						<a-entity id="js--phone" phone obj-model="obj: #phone-obj; mtl: #phone-mtl" position="-0.5 0 -0.5" rotation="0 -10 0" scale="0.07 0.07 0.07">
+
+						<!-- <a-entity id="js--phone" phone obj-model="obj: #phone-obj; mtl: #phone-mtl" position="-0.5 0 -0.5" rotation="0 -10 0" scale="0.07 0.07 0.07">
 							<a-text id="js--phone-text" value="12:00" align="center" color="white" scale="2" phoneTime position="0.5 2.25 0" rotation="0 90 0"></a-text>
 							<a-text id="js--phone-shoppinglist" align="center" color="black" scale="1.5"  position="0.5 1 0" rotation="0 90 0"></a-text>
 							<a-box color="red" class="js--checkmark" position="1 1.5 1.2" scale="0.1 0.1 0.1"></a-box>
@@ -95,10 +111,10 @@
 							<a-box color="red" class="js--checkmark" position="1 0.87 1.2" scale="0.1 0.1 0.1"></a-box>
 							<a-box color="red" class="js--checkmark" position="1 0.62 1.2" scale="0.1 0.1 0.1"></a-box>
 							<a-box color="red" class="js--checkmark" position="1 0.37 1.2" scale="0.1 0.1 0.1"></a-box>
-						</a-entity>
+						</a-entity> -->
 						<!-- hand controls -->
 						<a-entity id="left-hand2" teleport-controls="cameraRig: #cameraRig2; teleportOrigin: #head2; button: trigger; collisionEntities: .js--welLopen; curveShootingSpeed:5;" oculus-touch-controls="hand: left"></a-entity>
-						
+
 						<a-entity id="right-hand2" laser-controls="hand: right" raycaster="interval: 750; objects: .clickable; far: infinite" line="opacity: 0.5"></a-entity>
 					</a-entity>
 				</a-entity>
@@ -120,6 +136,17 @@
 					<!-- afrekenen -->
 					<a-plane class="js--kassaVloer" color="#f3dbc4" height="1.5" width="0.5" position="-1.25 0 -9.75" rotation="-90 0 0"></a-plane>
 					<a-plane class="js--kassaVloer" color="#f3dbc4" height="1.5" width="2" position="-2.5 0 -9.75" rotation="-90 0 0"></a-plane>
+
+					<a-entity id="js--phone" phone obj-model="obj: #phone-obj; mtl: #phone-mtl" position="-1 1.2 -2.5" rotation="0 0 0" scale="0.4 0.4 0.4">
+						<a-text id="js--phone-text" value="12:00" align="center" color="white" scale="2" phoneTime position="0.5 2.25 0" rotation="0 90 0"></a-text>
+						<a-text id="js--phone-shoppinglist" align="center" color="black" scale="1.5"  position="0.27 1 0" rotation="0 90 0"></a-text>
+						<a-box color="red" class="js--checkmark" position="0.25 1.5 1.2" scale="0.1 0.1 0.1"></a-box>
+						<a-box color="red" class="js--checkmark" position="0.25 1.3 1.2" scale="0.1 0.1 0.1"></a-box>
+						<a-box color="red" class="js--checkmark" position="0.25 1.07 1.2" scale="0.1 0.1 0.1"></a-box>
+						<a-box color="red" class="js--checkmark" position="0.25 0.87 1.2" scale="0.1 0.1 0.1"></a-box>
+						<a-box color="red" class="js--checkmark" position="0.25 0.62 1.2" scale="0.1 0.1 0.1"></a-box>
+						<a-box color="red" class="js--checkmark" position="0.25 0.37 1.2" scale="0.1 0.1 0.1"></a-box>
+					</a-entity>
 
 					<!-- zuivel -->
 					<!-- <a-obj-model src="#kast-7-obj" mtl="#kast-7-mtl" position="8.25 0 -7.5" scale="0.5 0.5 0.5"></a-obj-model> -->
@@ -225,7 +252,16 @@
           </a-obj-model>
 
 					<!-- kassa -->
-					<a-box color="black" height="1" width="2.5" depth="1" position="-2.25 0.5 -11"></a-box>
+					<a-box color="black" height="1" width="2.5" depth="1" position="-2.25 0.5 -11">
+						<a-obj-model src="#5euro-obj" mtl="#5euro-mtl" position="0.7 0.5 -0.06" scale="0.05 0.05 0.05" rotation="0 270 0"></a-obj-model>
+						<a-obj-model src="#10euro-obj" mtl="#10euro-mtl" position="1.1 0.5 -0.06" scale="0.05 0.05 0.05" rotation="0 270 0"></a-obj-model>
+						<a-obj-model src="#1euro-obj" mtl="#1euro-mtl" position="0.8 0.5 0.12" scale="0.05 0.05 0.05" rotation="0 180 0"></a-obj-model>
+						<a-obj-model src="#2euro-obj" mtl="#2euro-mtl" position="1 0.5 0.12" scale="0.05 0.05 0.05" rotation="0 180 0"></a-obj-model>
+						<a-obj-model src="#5cent-obj" mtl="#50cent-mtl" position="0.6 0.5 0.3" scale="0.025 0.025 0.025" rotation="0 180 0"></a-obj-model>
+						<a-obj-model src="#10cent-obj" mtl="#10cent-mtl" position="0.8 0.5 0.3" scale="0.03 0.03 0.03" rotation="0 180 0"></a-obj-model>
+						<a-obj-model src="#20cent-obj" mtl="#20cent-mtl" position="1 0.5 0.3" scale="0.035 0.035 0.035" rotation="0 180 0"></a-obj-model>
+						<a-obj-model src="#50cent-obj" mtl="#50cent-mtl" position="1.2 0.5 0.3" scale="0.04 0.04 0.04" rotation="0 180 0"></a-obj-model>
+					</a-box>
 
 					<!-- muren -->
 					<a-box color="grey" height="3" width="12.5" depth="0.5" position="2.75 1.5 -11.75"></a-box>
