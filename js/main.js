@@ -1,35 +1,50 @@
 //Global variables
 
-	// Alle items en de prijzen ervan (Prijzen van de items moeten op dezeflde positie in de array staan)
-	const shopItemList = ['pastasaus', 'spaghetti', 'pringles', 'chocolade', 'chips-naturel', 'chips-paprika', 'kip', 'appel', 'broccoli', 'brood', 'banaan', 'koek', 'sla'];
-	const shopPriceList = [2.99, 1.35, 2.09, 2,89, 0.99, 0.99, 6.69, 0.60, 1.49, 1.99, 0.99, 1.49, 0.99];
-	let shoppingCartArray = ['', '', '', '', '', '', '', ''];
-	let updatableList;
-	let rawList = shopItemList;
-	let rawPrice = shopPriceList;
-	let listArray = '';
-	let priceArray = '';
-	let addListenerOnce = false;
+// Alle items en de prijzen ervan (Prijzen van de items moeten op dezeflde positie in de array staan)
+const shopItemList = [
+	'pastasaus',
+	'spaghetti',
+	'pringles',
+	'chocolade',
+	'chips-naturel',
+	'chips-paprika',
+	'kip',
+	'appel',
+	'broccoli',
+	'brood',
+	'banaan',
+	'koek',
+	'sla',
+];
+const shopPriceList = [
+	2.99,
+	1.35,
+	2.09,
+	2,
+	89,
+	0.99,
+	0.99,
+	6.69,
+	0.6,
+	1.49,
+	1.99,
+	0.99,
+	1.49,
+	0.99,
+];
+let shoppingCartArray = ['', '', '', '', '', '', '', ''];
+let updatableList;
+let rawList = shopItemList;
+let rawPrice = shopPriceList;
+let listArray = '';
+let priceArray = '';
+let addListenerOnce = false;
 
 window.onload = () => {
 	const phoneList = document.getElementById('js--phone-shoppinglist');
 	const phone = document.getElementById('js--phone');
 
-	//Klik functies
-	const startButton = document.getElementById('startButton');
-	const optiesButton = document.getElementById('optiesButton');
-	const menuScene = document.getElementById('js--menuScene');
-  	const winkelScene = document.getElementById('js--winkelScene');
-
-  	const addListeners = () => {
-    optiesButton.addEventListener('click', function () {
-      menuScene.setAttribute('visible', 'false');
-      winkelScene.setAttribute('visible', 'true');
-    });
-    startButton.addEventListener('click', function () {
-      menuScene.setAttribute('visible', 'false');
-      winkelScene.setAttribute('visible', 'true');
-    });
+	const addListeners = () => {
 		let phonePos = 0;
 		this.addEventListener('keydown', function (event) {
 			if (event.key === 'r' && phonePos === 0) {
@@ -46,9 +61,9 @@ window.onload = () => {
 				return;
 			}
 		});
-	}
+	};
 
-  addListeners();
+	addListeners();
 
 	// Maakt de shopping list aan met de prijzen en geeft een random lijstje aan de speler
 	const setShoppinglist = () => {
@@ -81,7 +96,7 @@ window.onload = () => {
 			rawTotal = rawTotal + parseFloat(priceList[i]);
 		}
 		totalPrice = rawTotal.toFixed(2);
-	}
+	};
 	setShoppinglist();
 
 	// Functie om shoppinglist te updaten - ! W.I.P. !
