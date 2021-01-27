@@ -7,7 +7,7 @@ AFRAME.registerComponent('startbutton', {
 		this.el.addEventListener('click', function () {
 			menuScene.setAttribute('visible', 'false');
 			winkelScene.setAttribute('visible', 'true');
-			camera1.setAttribute('raycaster', 'interval: 1000; objects: .clickable; far: 1.5;');
+			// camera1.setAttribute('raycaster', 'interval: 1000; objects: .clickable; far: 1.5;');
 			lefthand.setAttribute('teleport-controls', 'cameraRig: #cameraRig1; teleportOrigin: #head1; button: trigger; collisionEntities: .js--welLopen; curveShootingSpeed:5;');
 		});
 	},
