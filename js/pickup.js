@@ -2,8 +2,9 @@ AFRAME.registerComponent("pickup", {
     init:function(){
         const phoneList = document.getElementById('js--phone-shoppinglist');
         const checkmark = document.getElementsByClassName('js--checkmark');
-        let executeFix = 0;
-
+        const highscore = document.getElementById('js--score');
+        let score = 0;
+        let itemCheck = false;
         const updateShoppingList = (itemName) => {
             let list;
             for (let i = 0; i < updatableList.length; i++) {
@@ -17,36 +18,50 @@ AFRAME.registerComponent("pickup", {
                     list = list + updatableList[i] + '\n';
                 }
             }
+            itemCheck = true;
             phoneList.setAttribute('value', list);
-        }
+                // for (let i = 0; i < 7; i++) {
+                //     if (itemArray[i] === '') {
+                //         itemArray[i] =  "item";
 
+                //         console.log()
+                //         camera.innerHTML += HTML.replace('clickable','');
+                //         console.log(itemPlace.children)
+                //     }
+                // }         
+        }
+       this.addCompListener = () => {
         this.el.addEventListener('click', function () {
             let itemId = this.getAttribute('class').split(' ');
-            if(executeFix === 0){
-                executeFix = 1;
+            let itemCheck = 0;
                 for(let i = 0; i<updatableList.length; i++){
-                    if(itemId[1] == updatableList[i]){
-                        this.setAttribute('animation', 'property: scale; to: 0 0 0; dur: 500; easing: linear; loop: false')
-                        setTimeout(function(){
-                            executeFix = 0;
-                            updateShoppingList(itemId[1]);
-                            this.remove();
-                      
-                            
-                        },510);
-                    }  
+                    if(itemId[1] == updatableList[i] &&  checkmark[i].getAttribute('color') == "red"){
+                        console.log(checkmark[i].getAttribute('color'))
+                        updateShoppingList(itemId[1]);
+                        score = score + 100;
+                        console.log(score)
+                        highscore.setAttribute('value', score);
+                        itemCheck = true;
+                    }
                 }
-            }
-            
-            
-            
+                this.setAttribute('animation', 'property: scale; to: 0 0 0; dur: 500; easing: linear; loop: false');
+                setTimeout(function(){
+                    this.remove;
+                },510);
+                if((i == updatableList.length && itemCheck == false)){
+                    console.log("fout")
+                    score = score - 100;
+                    highscore.setAttribute('value', score);
+                }
         });
+    }
+    
     },
     update:function(){
- 
+        this.addCompListener();
     },
     tick:function(){
- 
+
     },
     remove:function(){
 

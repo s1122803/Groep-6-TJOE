@@ -15,7 +15,7 @@ AFRAME.registerComponent("phone", {
         this.getTime();
     },
     tick:function(){
- 
+
     },
     remove:function(){
 

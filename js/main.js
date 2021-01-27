@@ -1,7 +1,7 @@
 //Global variables
 
 // Alle items en de prijzen ervan (Prijzen van de items moeten op dezeflde positie in de array staan)
-const shopItemList = ['pasta', 'chips', 'kip', 'Brood', 'Banaan', 'Koek', 'Sla', 'Groentjes'];
+const shopItemList = ['pasta', 'chips', 'kip', 'Brood', 'Banaan', 'Koek', 'Sla', 'spaghetti'];
 const shopPriceList = [2.99, 0.99, 3.99, 1.99, 0.99, 1.49, 0.99, 1.99];
 
 let updatableList;
@@ -9,12 +9,11 @@ let rawList = shopItemList;
 let rawPrice = shopPriceList;
 let listArray = '';
 let priceArray = '';
+let addListenerOnce = false;
 
 window.onload = () => {
-	const camera = document.getElementById('js--camera');
 	const phoneList = document.getElementById('js--phone-shoppinglist');
 	const phone = document.getElementById('js--phone');
-	let pickups = document.getElementsByClassName('js--pickup');
 
 	//Klik functies
 	const startButton = document.getElementById('startButton');
@@ -84,40 +83,5 @@ window.onload = () => {
 		totalPrice = rawTotal.toFixed(2);
 	}
 	setShoppinglist();
-
-	// Functie om shoppinglist te updaten - ! W.I.P. !
-
-	function updateShoppingList() {
-		let list = updatableList[0] + '\n';
-		for (let i = 1; i < updatableList.length; i++) {
-			list = list + updatableList[i] + '\n';
-		}
-		shoppinglist.setAttribute('value', list);
-		console.log(list, ' test');
-	}
-
-	// Functie om items aan de shoppingcart toe te voegen
-	function addToCart(item) {
-		for (i = 0; i < shoppingCartArray.length; i++) {
-			if (shoppingCartArray[i] === '') {
-				shoppingCartArray[i] = item;
-				i = 7;
-			}
-			if (i === 7 && shoppingCartArray[7] !== '') {
-				console.log('cart is full!');
-			}
-		}
-	}
-
-	// Functie om item uit shoppingcart weg te halen, geef aan de functie het item mee wat verwijderd moet worden
-
-	function removeFromCart(item) {
-		for (i = 0; i < shoppingCartArray.length; i++) {
-			if (shoppingCartArray[i] === item) {
-				shoppingCartArray[i] = '';
-				console.log(shoppingCartArray);
-			}
-		}
-	}
 
 };
