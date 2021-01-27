@@ -123,7 +123,8 @@
 						data-aframe-inspector-original-camera=""
 						cursor="fuse: false; rayOrigin: mouse"
 						raycaster="objects: .clickable; far: 50;"
-						><a-entity
+						>
+						<!-- <a-entity
 							id="js--phone"
 							phone
 							obj-model="obj: #phone-obj; mtl: #phone-mtl"
@@ -150,7 +151,7 @@
 								position="0.5 1 0"
 								rotation="0 90 0"
 							></a-text
-						></a-entity>
+						></a-entity> -->
 						<!-- hand controls -->
 						<a-entity id="left-hand2" oculus-touch-controls="hand: left"></a-entity>
 						<!--teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; collisionEntities: .muur; curveShootingSpeed:10;"-->
@@ -180,6 +181,11 @@
 					<!-- afrekenen -->
 					<a-plane class="js--kassaVloer" color="#f3dbc4" height="1.5" width="0.5" position="-1.25 0 -9.75" rotation="-90 0 0"></a-plane>
 					<a-plane class="js--kassaVloer" color="#f3dbc4" height="1.5" width="2" position="-2.5 0 -9.75" rotation="-90 0 0"></a-plane>
+
+					<a-entity id="js--phone" phone obj-model="obj: #phone-obj; mtl: #phone-mtl" position="-1.4 1.4 -0.5" rotation="0 0 0" scale="0.3 0.3 0.3">
+						<a-text id="js--phone-text" value="12:00" align="center" color="white" scale="2" phoneTime position="0.5 2.25 0" rotation="0 90 0" ></a-text>
+						<a-text id="js--phone-shoppinglist" align="center" color="black" scale="1.5" phoneTime position="0.5 1 0" rotation="0 90 0" ></a-text>
+					</a-entity>
 
 					<!-- zuivel -->
 					<!-- <a-obj-model src="#kast-7-obj" mtl="#kast-7-mtl" position="8.25 0 -7.5" scale="0.5 0.5 0.5"></a-obj-model> -->
