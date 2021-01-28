@@ -10,9 +10,9 @@ AFRAME.registerComponent('pickup', {
 		const beepSound = new Audio('././sound/beep.mp3');
 		plopSound.loop = false;
 		plopSound.currentTime = 0.9;
-		plopSound.volume = 0.2;
-		collectSound.volume = 0.2;
-		beepSound.volume = 0.2;
+		// plopSound.volume = 0.2;
+		// collectSound.volume = 0.2;
+		// beepSound.volume = 0.2;
 		let itemCheck = false;
 		let timeout = false;
 		
@@ -38,7 +38,7 @@ AFRAME.registerComponent('pickup', {
 			if (colorArray.every((val) => val === 'green')) {
 				enablePayment = true;
 				paymentText.setAttribute('value', 'De prijs is: € ' + totalPrice);
-				for(let x = 0; x<moneyCount.length; x++){
+				for (let x = 0; x < moneyCount.length; x++) {
 					moneyCount[x].setAttribute('opacity', '1');
 				}
 				acceptPayment.setAttribute('opacity', '1');
@@ -57,25 +57,27 @@ AFRAME.registerComponent('pickup', {
 							score = score + 100;
 							highscore.setAttribute('value', 'Score: ' + score);
 							itemCheck = true;
-							setTimeout(function(){
+							setTimeout(function () {
+								collectSound.volume = sessionStorage.getItem('volume');
 								collectSound.play();
-							},500);
+							}, 500);
 						}
 					}
 					this.setAttribute('animation', 'property: scale; to: 0 0 0; dur: 500; easing: linear; loop: false');
 
+					plopSound.volume = sessionStorage.getItem('volume');
 					plopSound.play();
 					setTimeout(function () {
 						this.remove;
 						timeout = false;
 					}, 510);
 					if (i == updatableList.length && itemCheck == false) {
-						
 						score = score - 100;
 						highscore.setAttribute('value', 'Score: ' + score);
-						setTimeout(function(){
+						setTimeout(function () {
+							beepSound.volume = sessionStorage.getItem('volume');
 							beepSound.play();
-						},500);
+						}, 500);
 					}
 				}
 			});

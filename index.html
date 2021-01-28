@@ -7,10 +7,11 @@
 		<script type="text/javascript" src="./js/phone-time.js"></script>
 		<script type="text/javascript" src="./js/pickup.js"></script>
 		<script type="text/javascript" src="./js/payment.js"></script>
-		<script type="text/javascript" src="./js/start-game.js"></script>
 		<script type="text/javascript" src="./js/level-select.js"></script>
+		<script type="text/javascript" src="./js/volume.js"></script>
 		<script type="text/javascript" src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
 		<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+		<script type="text/javascript" src="./js/start-game.js"></script>
 		<title>The Journey of Education</title>
 		<link rel="icon" href="./img/basket.png" type="image/png" sizes="16x16" />
 	</head>
@@ -108,8 +109,11 @@
 					<a-text class="" value="6" text="align: center" position="3.2 0 0"><a-box class="clickable" id="js--level-6" levelselect="level: 6" height="0.5" position="0 0 -0.01" material="transparent: true; color: #0000FF" geometry="height: 0.25; depth: 0.01; width: 0.2" visible='false'></a-box></a-text>
 					<a-text class="" value="8" text="align: center" position="3.5 0 0"><a-box class="clickable" id="js--level-8" levelselect="level: 8" height="0.5" position="0 0 -0.01" material="transparent: true; color: #0000FF" geometry="height: 0.25; depth: 0.01; width: 0.2" visible='false'></a-box></a-text>
 				</a-text>
-				<a-text startButton class="" id="optiesButton" value="OPTIES" position="0 1.5 -5" text="align: center;"></a-text>
-				<a-text class="" value="LICENCIES" position="0 1 -5" text="align: center;"></a-text>
+				<a-text value="Geluid:" position="-.35 1.5 -5">
+					<a-text class="" value="AAN" text="align: center" position="1 0 0"><a-box class="clickable" volume="volume: 0.2" id="js--geluid-aan" height="0.5" position="0 0 -0.01" material="transparent: true; color: #0000FF" geometry="height: 0.25; depth: 0.01; width: 0.55" visible='true'></a-box></a-text>
+					<a-text class="" value="UIT" text="align: center" position="1.5 0 0"><a-box class="clickable" volume="volume: 0"id="js--geluid-uit"height="0.5" position="0 0 -0.01" material="transparent: true; color: #0000FF" geometry="height: 0.25; depth: 0.01; width: 0.4" visible='false'></a-box></a-text>
+				</a-text>
+				<!-- <a-text class="" value="LICENCIES" position="0 1 -5" text="align: center;"></a-text> -->
 				<!-- <a-entity environment="preset: forest; ground: noise; groundYScale: 5; groundTexture: walkernoise; skyType: color; skyColor: #87CEEB; fog: 0;"></a-entity> -->
 			</a-entity>
 			<!-- tweede scene hieronder! -->

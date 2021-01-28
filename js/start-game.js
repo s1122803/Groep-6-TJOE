@@ -1,5 +1,6 @@
 AFRAME.registerComponent('startbutton', {
-	init: function () {
+	init: function () {},
+	update: function () {
 		const menuScene = document.getElementById('js--menuScene');
 		const winkelScene = document.getElementById('js--winkelScene');
 		const camera1 = document.getElementById('head1');
@@ -12,7 +13,6 @@ AFRAME.registerComponent('startbutton', {
 			lefthand.setAttribute('teleport-controls', 'cameraRig: #cameraRig1; teleportOrigin: #head1; button: trigger; collisionEntities: .js--welLopen; curveShootingSpeed:5;');
 		});
 	},
-	update: function () {},
 	tick: function () {},
 	remove: function () {},
 	pause: function () {},
