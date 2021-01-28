@@ -67,7 +67,6 @@ window.onload = () => {
 	// Maakt de shopping list aan met de prijzen en geeft een random lijstje aan de speler
 	window.setBoodschappenlijstje = () => {
 		let level = sessionStorage.getItem('level');
-		console.log(checkmark)
 		switch(level){
 			case '4':
 				checkmark[7].setAttribute('opacity', '0');
@@ -78,6 +77,10 @@ window.onload = () => {
 				checkmark[6].setAttribute('class','');
 				checkmark[5].setAttribute('class','');
 				checkmark[4].setAttribute('class','');
+				checkmark[0].setAttribute('position','0.25 1.32 1.2');
+				checkmark[1].setAttribute('position','0.25 1.10 1.2');
+				checkmark[2].setAttribute('position','0.25 0.87  1.2');
+				checkmark[3].setAttribute('position','0.25 0.6 1.2');
 		
 			break;
 
@@ -86,12 +89,14 @@ window.onload = () => {
 				checkmark[6].setAttribute('opacity', '0');
 				checkmark[7].setAttribute('class','');
 				checkmark[6].setAttribute('class','');
+				checkmark[0].setAttribute('position','0.25 1.52 1.2');
+				checkmark[1].setAttribute('position','0.25 1.32 1.2');
+				checkmark[2].setAttribute('position','0.25 1.10  1.2');
+				checkmark[3].setAttribute('position','0.25 0.87 1.2');
+				checkmark[4].setAttribute('position','0.25 0.62 1.2');
+				checkmark[5].setAttribute('position','0.25 0.4 1.2');
 			break;
 		}
-		// let rawList = shopItemList;
-		// let rawPrice = shopPriceList;
-		// let listArray = '';
-		// let priceArray = '';
 		
 		for (let i = 0; i < level; i++) {
 			let randomNum = Math.floor(Math.random() * rawList.length);
