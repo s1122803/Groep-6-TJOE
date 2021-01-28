@@ -5,6 +5,7 @@ AFRAME.registerComponent('pickup', {
 		const checkmark = document.getElementsByClassName('js--checkmark');
 		const moneyCount = document.getElementsByClassName('js--money-count');
 		const highscore = document.getElementById('js--score');
+		const acceptPayment = document.getElementById('js--accept-payment');
 		const plopSound = new Audio('././sound/plop.mp3');
 		const collectSound = new Audio('././sound/collect.mp3');
 		const beepSound = new Audio('././sound/beep.mp3');
@@ -39,6 +40,7 @@ AFRAME.registerComponent('pickup', {
 				for(let x = 0; x<moneyCount.length; x++){
 					moneyCount[x].setAttribute('opacity', '1');
 				}
+				acceptPayment.setAttribute('opacity', '1');
 			}
 		};
 		this.addCompListener = () => {
