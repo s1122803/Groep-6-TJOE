@@ -1,20 +1,20 @@
 //Global variables
 
-	// Alle items en de prijzen ervan (Prijzen van de items moeten op dezeflde positie in de array staan)
-	const shopItemList = ['pastasaus', 'spaghetti', 'pringles', 'chocolade', 'chips-naturel', 'chips-paprika', 'kip', 'appel', 'broccoli', 'brood', 'banaan', 'koek', 'sla'];
-	const shopPriceList = [2.99, 1.35, 2.09, 2.89, 0.99, 0.99, 6.69, 0.60, 1.49, 1.99, 0.99, 1.49, 0.99];
-	let shoppingCartArray = ['', '', '', '', '', '', '', ''];
-	let updatableList;
-	let rawList = shopItemList;
-	let rawPrice = shopPriceList;
-	let listArray = '';
-	let priceArray = '';
-	let addListenerOnce = false;
-	let totalPayment = 0.00;
-	let totalPrice = 0.00;
-	let score = 0;
-	let enablePayment = false;
-	let disableTick = false;
+// Alle items en de prijzen ervan (Prijzen van de items moeten op dezeflde positie in de array staan)
+const shopItemList = ['pastasaus', 'spaghetti', 'pringles', 'chocolade', 'chips-naturel', 'chips-paprika', 'kip', 'appel', 'broccoli', 'brood', 'banaan', 'koek', 'sla'];
+const shopPriceList = [2.99, 1.35, 2.09, 2.89, 0.99, 0.99, 6.69, 0.6, 1.49, 1.99, 0.99, 1.49, 0.99];
+let shoppingCartArray = ['', '', '', '', '', '', '', ''];
+let updatableList;
+let rawList = shopItemList;
+let rawPrice = shopPriceList;
+let listArray = '';
+let priceArray = '';
+let addListenerOnce = false;
+let totalPayment = 0.0;
+let totalPrice = 0.0;
+let score = 0;
+let enablePayment = false;
+let disableTick = false;
 
 window.onload = () => {
 	const phoneList = document.getElementById('js--phone-shoppinglist');
@@ -24,17 +24,17 @@ window.onload = () => {
 	const startButton = document.getElementById('startButton');
 	const optiesButton = document.getElementById('optiesButton');
 	const menuScene = document.getElementById('js--menuScene');
-  	const winkelScene = document.getElementById('js--winkelScene');
+	const winkelScene = document.getElementById('js--winkelScene');
 
-  	const addListeners = () => {
-    optiesButton.addEventListener('click', function () {
-      menuScene.setAttribute('visible', 'false');
-      winkelScene.setAttribute('visible', 'true');
-    });
-    startButton.addEventListener('click', function () {
-      menuScene.setAttribute('visible', 'false');
-      winkelScene.setAttribute('visible', 'true');
-	});
+	const addListeners = () => {
+		optiesButton.addEventListener('click', function () {
+			menuScene.setAttribute('visible', 'false');
+			winkelScene.setAttribute('visible', 'true');
+		});
+		startButton.addEventListener('click', function () {
+			menuScene.setAttribute('visible', 'false');
+			winkelScene.setAttribute('visible', 'true');
+		});
 		// let phonePos = 0;
 		// this.addEventListener('keydown', function (event) {
 		// 	if (event.key === 'r' && phonePos === 0) {
@@ -51,20 +51,18 @@ window.onload = () => {
 		// 		return;
 		// 	}
 		// });
-	}
+	};
 
 	addListeners();
 
 	// Maakt de shopping list aan met de prijzen en geeft een random lijstje aan de speler
-	const setShoppinglist = () => {
+	window.fn1 = () => {
 		// let rawList = shopItemList;
 		// let rawPrice = shopPriceList;
 		// let listArray = '';
 		// let priceArray = '';
-		let easy = 4;
-		let medium = 6;
-		let hard = 8;
-		for (let i = 0; i < medium; i++) {
+		let level = sessionStorage.getItem('level');
+		for (let i = 0; i < level; i++) {
 			let randomNum = Math.floor(Math.random() * rawList.length);
 			listArray = listArray + rawList[randomNum] + ' ';
 			priceArray = priceArray + rawPrice[randomNum] + ' ';
@@ -87,24 +85,21 @@ window.onload = () => {
 		}
 		let priceSplit = rawTotal.toFixed(2).split('.');
 
-
 		totalPrice = rawTotal.toFixed(2);
 
 		let pricePos = parseInt(priceSplit[priceSplit.length - 1]);
 
 		let priceDecimal = Math.ceil(pricePos / 5) * 5;
 
-		if(priceDecimal < 10){
+		if (priceDecimal < 10) {
 			let part_1 = priceSplit[0].toString();
-			let part_2 = "0" + priceDecimal.toString();
-			let convert = part_1 + "." + part_2
+			let part_2 = '0' + priceDecimal.toString();
+			let convert = part_1 + '.' + part_2;
 			totalPrice = parseFloat(convert);
-		}else{
-			totalPrice = parseFloat(priceSplit[0] + "." + priceDecimal);
-			totalPrice = totalPrice.toFixed(2)
+		} else {
+			totalPrice = parseFloat(priceSplit[0] + '.' + priceDecimal);
+			totalPrice = totalPrice.toFixed(2);
 		}
-		console.log("TotalPrice = " + totalPrice);
-
-	}
-	setShoppinglist();
+		console.log('TotalPrice = ' + totalPrice);
+	};
 };
