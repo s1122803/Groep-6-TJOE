@@ -7,7 +7,7 @@ AFRAME.registerComponent('pickup', {
 		const plopSound = new Audio('././sound/plop.mp3');
 		const collectSound = new Audio('././sound/collect.mp3');
 		const beepSound = new Audio('././sound/beep.mp3');
-		const acceptPayment = document.getElementById('js--accept-payment');
+		const acceptPayment = document.getElementById('js--accept-payment-tekst');
 		plopSound.loop = false;
 		plopSound.currentTime = 0.9;
 		let itemCheck = false;
