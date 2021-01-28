@@ -10,9 +10,6 @@ AFRAME.registerComponent('pickup', {
 		const acceptPayment = document.getElementById('js--accept-payment');
 		plopSound.loop = false;
 		plopSound.currentTime = 0.9;
-		// plopSound.volume = 0.2;
-		// collectSound.volume = 0.2;
-		// beepSound.volume = 0.2;
 		let itemCheck = false;
 		let timeout = false;
 

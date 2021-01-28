@@ -1,8 +1,8 @@
 //Global variables
 
 // Alle items en de prijzen ervan (Prijzen van de items moeten op dezeflde positie in de array staan)
-const shopItemList = ['pastasaus', 'spaghetti', 'pringles', 'chocolade', 'chips-naturel', 'chips-paprika', 'kip', 'appel', 'broccoli', 'brood', 'banaan'];
-const shopPriceList = [2.99, 1.35, 2.09, 2.89, 0.99, 0.99, 6.69, 0.6, 1.49, 1.99, 0.99];
+const shopItemList = ['appel', 'banaan', 'peer', 'broccoli', 'sla', 'paprika', 'brood', 'kip', 'gehakt', 'spaghetti', 'pastasaus', 'pringles', 'chocolade', 'chips-naturel', 'chips-paprika', 'mais', 'cola', 'fanta', 'water', 'sinaasappelsap', 'melk', 'vla', 'yoghurt', 'boter', 'kaas', 'salami'];
+const shopPriceList = [0.60, 0.99, 0.60, 1.49, 0.99, 0.89, 1.99, 6.69, 3.09, 1.35, 2.99, 2.09, 2.89, 0.99, 0.99, 1.59, 1.85, 1.99, 0.59, 1.43, 1.45, 1.09, 0.95, 1.39, 2.39, 1.29];
 let shoppingCartArray = ['', '', '', '', '', '', '', ''];
 let updatableList;
 let rawList = shopItemList;
@@ -30,36 +30,6 @@ window.onload = () => {
 
 	let checkmark = document.getElementsByClassName('js--checkmark');
 
-	// const addListeners = () => {
-	// 	optiesButton.addEventListener('click', function () {
-	// 		menuScene.setAttribute('visible', 'false');
-	// 		winkelScene.setAttribute('visible', 'true');
-	// 	});
-	// 	startButton.addEventListener('click', function () {
-	// 		menuScene.setAttribute('visible', 'false');
-	// 		winkelScene.setAttribute('visible', 'true');
-	// 	});
-	// 	let phonePos = 0;
-	// 	this.addEventListener('keydown', function (event) {
-	// 		if (event.key === 'r' && phonePos === 0) {
-	// 			phone.setAttribute('position', '0 0 -0.5');
-	// 			phone.setAttribute('rotation', '0 -90 0');
-	// 			phone.setAttribute('scale', '0.1 0.1 0.1');
-	// 			phonePos = 1;
-	// 			return;
-	// 		} else if (event.key === 'r' && phonePos === 1) {
-	// 			phone.setAttribute('position', '-0.5 0 -0.5');
-	// 			phone.setAttribute('rotation', '0 -10 0');
-	// 			phone.setAttribute('scale', '0.07 0.07 0.07');
-	// 			phonePos = 0;
-	// 			return;
-	// 		}
-	// 	});
-	// };
-
-	// addListeners();
-
-	// Maakt de shopping list aan met de prijzen en geeft een random lijstje aan de speler
 	window.setBoodschappenlijstje = () => {
 		let level = sessionStorage.getItem('level');
 		switch (level) {
