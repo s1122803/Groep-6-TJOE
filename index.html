@@ -33,8 +33,8 @@
 				<a-asset-item id="drinken-mtl" src="obj\drinken.mtl"></a-asset-item>
 				<a-asset-item id="brood_kast-obj" src="obj\brood_kast.obj"></a-asset-item>
 				<a-asset-item id="brood_kast-mtl" src="obj\brood_kast.mtl"></a-asset-item>
-				<a-asset-item id="kast-12-obj" src="obj\kast_12.obj"></a-asset-item>
-				<a-asset-item id="kast-12-mtl" src="obj\kast_12.mtl"></a-asset-item>
+				<a-asset-item id="koeling-obj" src="obj\koeling.obj"></a-asset-item>
+				<a-asset-item id="koeling-mtl" src="obj\koeling.mtl"></a-asset-item>
 				<a-asset-item id="vers-obj" src="obj\vers.obj"></a-asset-item>
 				<a-asset-item id="vers-mtl" src="obj\vers.mtl"></a-asset-item>
 				<a-asset-item id="groente-obj" src="obj\groente.obj"></a-asset-item>
@@ -98,6 +98,18 @@
 				<a-asset-item id="water-mtl" src="obj\water.mtl"></a-asset-item>
 				<a-asset-item id="sinaasappelsap-obj" src="obj\sinaasappelsap.obj"></a-asset-item>
 				<a-asset-item id="sinaasappelsap-mtl" src="obj\sinaasappelsap.mtl"></a-asset-item>
+				<a-asset-item id="melk-obj" src="obj\melk.obj"></a-asset-item>
+				<a-asset-item id="melk-mtl" src="obj\melk.mtl"></a-asset-item>
+				<a-asset-item id="vla-obj" src="obj\vla.obj"></a-asset-item>
+				<a-asset-item id="vla-mtl" src="obj\vla.mtl"></a-asset-item>
+				<a-asset-item id="yoghurt-obj" src="obj\yoghurt.obj"></a-asset-item>
+				<a-asset-item id="yoghurt-mtl" src="obj\yoghurt.mtl"></a-asset-item>
+				<a-asset-item id="boter-obj" src="obj\boter.obj"></a-asset-item>
+				<a-asset-item id="boter-mtl" src="obj\boter.mtl"></a-asset-item>
+				<a-asset-item id="kaas-obj" src="obj\kaas.obj"></a-asset-item>
+				<a-asset-item id="kaas-mtl" src="obj\kaas.mtl"></a-asset-item>
+				<a-asset-item id="salami-obj" src="obj\salami.obj"></a-asset-item>
+				<a-asset-item id="salami-mtl" src="obj\salami.mtl"></a-asset-item>
 			</a-assets>
 
 			<!-- De camera -->
@@ -199,7 +211,82 @@
 					</a-entity>
 
 					<!-- koelshcap -->
-					<a-obj-model src="#kast-12-obj" mtl="#kast-12-mtl" position="8.25 0 -5" scale="0.5 0.5 0.5"></a-obj-model>
+					<a-obj-model src="#koeling-obj" mtl="#koeling-mtl" position="8.25 0 -5" scale="0.5 0.5 0.5">
+						<a-obj-model pickup class="clickable melk" src="#melk-obj" mtl="#melk-mtl" position="0 2.8 -11.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable melk" src="#melk-obj" mtl="#melk-mtl" position="0 2.8 -10.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable melk" src="#melk-obj" mtl="#melk-mtl" position="0 2.8 -9.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable melk" src="#melk-obj" mtl="#melk-mtl" position="0 2.8 -8.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable vla" src="#vla-obj" mtl="#vla-mtl" position="0 2.8 -7.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable vla" src="#vla-obj" mtl="#vla-mtl" position="0 2.8 -6.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable vla" src="#vla-obj" mtl="#vla-mtl" position="0 2.8 -5.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable vla" src="#vla-obj" mtl="#vla-mtl" position="0 2.8 -4.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable yoghurt" src="#yoghurt-obj" mtl="#yoghurt-mtl" position="0 2.8 -3.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable yoghurt" src="#yoghurt-obj" mtl="#yoghurt-mtl" position="0 2.8 -2.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable yoghurt" src="#yoghurt-obj" mtl="#yoghurt-mtl" position="0 2.8 -1.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable yoghurt" src="#yoghurt-obj" mtl="#yoghurt-mtl" position="0 2.8 -0.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable boter" src="#boter-obj" mtl="#boter-mtl" position="0 2.8 0.5" scale="0.18 0.18 0.18"></a-obj-model>
+						<a-obj-model pickup class="clickable boter" src="#boter-obj" mtl="#boter-mtl" position="0 2.8 1.5" scale="0.18 0.18 0.18"></a-obj-model>
+						<a-obj-model pickup class="clickable boter" src="#boter-obj" mtl="#boter-mtl" position="0 2.8 2.5" scale="0.18 0.18 0.18"></a-obj-model>
+						<a-obj-model pickup class="clickable boter" src="#boter-obj" mtl="#boter-mtl" position="0 2.8 3.5" scale="0.18 0.18 0.18"></a-obj-model>
+						<a-obj-model pickup class="clickable kaas" src="#kaas-obj" mtl="#kaas-mtl" position="0 2.8 4.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable kaas" src="#kaas-obj" mtl="#kaas-mtl" position="0 2.8 5.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable kaas" src="#kaas-obj" mtl="#kaas-mtl" position="0 2.8 6.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable kaas" src="#kaas-obj" mtl="#kaas-mtl" position="0 2.8 7.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable salami" src="#salami-obj" mtl="#salami-mtl" position="0 2.8 8.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable salami" src="#salami-obj" mtl="#salami-mtl" position="0 2.8 9.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable salami" src="#salami-obj" mtl="#salami-mtl" position="0 2.8 10.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable salami" src="#salami-obj" mtl="#salami-mtl" position="0 2.8 11.5" scale="0.2 0.2 0.2"></a-obj-model>
+
+						<a-obj-model pickup class="clickable melk" src="#melk-obj" mtl="#melk-mtl" position="0 1.48 -11.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable melk" src="#melk-obj" mtl="#melk-mtl" position="0 1.48 -10.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable melk" src="#melk-obj" mtl="#melk-mtl" position="0 1.48 -9.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable melk" src="#melk-obj" mtl="#melk-mtl" position="0 1.48 -8.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable vla" src="#vla-obj" mtl="#vla-mtl" position="0 1.48 -7.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable vla" src="#vla-obj" mtl="#vla-mtl" position="0 1.48 -6.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable vla" src="#vla-obj" mtl="#vla-mtl" position="0 1.48 -5.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable vla" src="#vla-obj" mtl="#vla-mtl" position="0 1.48 -4.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable yoghurt" src="#yoghurt-obj" mtl="#yoghurt-mtl" position="0 1.48 -3.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable yoghurt" src="#yoghurt-obj" mtl="#yoghurt-mtl" position="0 1.48 -2.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable yoghurt" src="#yoghurt-obj" mtl="#yoghurt-mtl" position="0 1.48 -1.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable yoghurt" src="#yoghurt-obj" mtl="#yoghurt-mtl" position="0 1.48 -0.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable boter" src="#boter-obj" mtl="#boter-mtl" position="0 1.48 0.5" scale="0.18 0.18 0.18"></a-obj-model>
+						<a-obj-model pickup class="clickable boter" src="#boter-obj" mtl="#boter-mtl" position="0 1.48 1.5" scale="0.18 0.18 0.18"></a-obj-model>
+						<a-obj-model pickup class="clickable boter" src="#boter-obj" mtl="#boter-mtl" position="0 1.48 2.5" scale="0.18 0.18 0.18"></a-obj-model>
+						<a-obj-model pickup class="clickable boter" src="#boter-obj" mtl="#boter-mtl" position="0 1.48 3.5" scale="0.18 0.18 0.18"></a-obj-model>
+						<a-obj-model pickup class="clickable kaas" src="#kaas-obj" mtl="#kaas-mtl" position="0 1.48 4.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable kaas" src="#kaas-obj" mtl="#kaas-mtl" position="0 1.48 5.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable kaas" src="#kaas-obj" mtl="#kaas-mtl" position="0 1.48 6.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable kaas" src="#kaas-obj" mtl="#kaas-mtl" position="0 1.48 7.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable salami" src="#salami-obj" mtl="#salami-mtl" position="0 1.48 8.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable salami" src="#salami-obj" mtl="#salami-mtl" position="0 1.48 9.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable salami" src="#salami-obj" mtl="#salami-mtl" position="0 1.48 10.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable salami" src="#salami-obj" mtl="#salami-mtl" position="0 1.48 11.5" scale="0.2 0.2 0.2"></a-obj-model>
+
+						<a-obj-model pickup class="clickable melk" src="#melk-obj" mtl="#melk-mtl" position="0 0.13 -11.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable melk" src="#melk-obj" mtl="#melk-mtl" position="0 0.13 -10.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable melk" src="#melk-obj" mtl="#melk-mtl" position="0 0.13 -9.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable melk" src="#melk-obj" mtl="#melk-mtl" position="0 0.13 -8.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable vla" src="#vla-obj" mtl="#vla-mtl" position="0 0.13 -7.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable vla" src="#vla-obj" mtl="#vla-mtl" position="0 0.13 -6.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable vla" src="#vla-obj" mtl="#vla-mtl" position="0 0.13 -5.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable vla" src="#vla-obj" mtl="#vla-mtl" position="0 0.13 -4.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable yoghurt" src="#yoghurt-obj" mtl="#yoghurt-mtl" position="0 0.13 -3.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable yoghurt" src="#yoghurt-obj" mtl="#yoghurt-mtl" position="0 0.13 -2.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable yoghurt" src="#yoghurt-obj" mtl="#yoghurt-mtl" position="0 0.13 -1.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable yoghurt" src="#yoghurt-obj" mtl="#yoghurt-mtl" position="0 0.13 -0.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable boter" src="#boter-obj" mtl="#boter-mtl" position="0 0.13 0.5" scale="0.18 0.18 0.18"></a-obj-model>
+						<a-obj-model pickup class="clickable boter" src="#boter-obj" mtl="#boter-mtl" position="0 0.13 1.5" scale="0.18 0.18 0.18"></a-obj-model>
+						<a-obj-model pickup class="clickable boter" src="#boter-obj" mtl="#boter-mtl" position="0 0.13 2.5" scale="0.18 0.18 0.18"></a-obj-model>
+						<a-obj-model pickup class="clickable boter" src="#boter-obj" mtl="#boter-mtl" position="0 0.13 3.5" scale="0.18 0.18 0.18"></a-obj-model>
+						<a-obj-model pickup class="clickable kaas" src="#kaas-obj" mtl="#kaas-mtl" position="0 0.13 4.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable kaas" src="#kaas-obj" mtl="#kaas-mtl" position="0 0.13 5.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable kaas" src="#kaas-obj" mtl="#kaas-mtl" position="0 0.13 6.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable kaas" src="#kaas-obj" mtl="#kaas-mtl" position="0 0.13 7.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable salami" src="#salami-obj" mtl="#salami-mtl" position="0 0.13 8.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable salami" src="#salami-obj" mtl="#salami-mtl" position="0 0.13 9.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable salami" src="#salami-obj" mtl="#salami-mtl" position="0 0.13 10.5" scale="0.2 0.2 0.2"></a-obj-model>
+						<a-obj-model pickup class="clickable salami" src="#salami-obj" mtl="#salami-mtl" position="0 0.13 11.5" scale="0.2 0.2 0.2"></a-obj-model>
+					</a-obj-model>
 
 
 					<!-- houdbaar -->
@@ -235,9 +322,6 @@
 						<a-obj-model pickup class="clickable mais" src="#mais-obj" mtl="#mais-mtl" position="0 0.13 3.5" scale="0.2 0.2 0.2"></a-obj-model>
 						<a-obj-model pickup class="clickable mais" src="#mais-obj" mtl="#mais-mtl" position="0 0.13 4.5" scale="0.2 0.2 0.2"></a-obj-model>
 					</a-obj-model>
-
-				<!-- vleeswaren -->
-				<!-- <a-obj-model src="#kast-5-obj" mtl="#kast-5-mtl" position="8.25 0 -1.5" scale="0.5 0.5 0.5"></a-obj-model> -->
 
 					<!-- snacks -->
 					<a-obj-model src="#snacks-obj" mtl="#snacks-mtl" position="3.5 0 -8.25" scale="0.5 0.5 0.5" rotation="0 -90 0">
@@ -357,10 +441,6 @@
 						<a-obj-model pickup class="clickable peer" src="#peer-obj" mtl="#peer-mtl" position="-0.534 1.023 -0.636" scale="0.035 0.035 0.035" rotation="0 0 -20"></a-obj-model>
 						<a-obj-model pickup class="clickable peer" src="#peer-obj" mtl="#peer-mtl" position="-0.534 1.023 -0.266" scale="0.035 0.035 0.035" rotation="0 0 -20"></a-obj-model>
 					</a-obj-model>
-
-				<!-- brood -->
-				<a-obj-model src="#kast-4-obj" mtl="#kast-4-mtl" position="4 0 0.75" scale="0.5 0.5 0.5" rotation="0 -90 0"></a-obj-model>
-
 
 				<!-- groente -->
 				<a-obj-model src="#groente-obj" mtl="#groente-mtl" position="2.2 0 -3.5" scale="0.5 0.5 0.5" rotation="0 180 0"> 1.1277 0.907
