@@ -9,7 +9,7 @@ AFRAME.registerComponent('startbutton', {
 			setBoodschappenlijstje();
 			menuScene.setAttribute('visible', 'false');
 			winkelScene.setAttribute('visible', 'true');
-			// camera1.setAttribute('raycaster', 'objects: .clickable; far: 1.5;');
+			camera1.setAttribute('raycaster', 'objects: .clickable; far: infinite;');
 			lefthand.setAttribute('teleport-controls', 'cameraRig: #cameraRig1; teleportOrigin: #head1; button: trigger; collisionEntities: .js--welLopen; curveShootingSpeed:5;');
 		});
 	},

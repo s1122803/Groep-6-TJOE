@@ -13,7 +13,7 @@ let addListenerOnce = false;
 let totalPayment = 0.0;
 let totalPrice = 0.0;
 let score = 0;
-let enablePayment = false;
+let enablePayment = false; //terug zetten naar false!!
 let disableTick = false;
 let count_10_euro = 0;
 let count_5_euro = 0;
@@ -28,11 +28,6 @@ window.onload = () => {
 	const phoneList = document.getElementById('js--phone-shoppinglist');
 	const phone = document.getElementById('js--phone');
 
-	//Klik functies
-	const startButton = document.getElementById('startButton');
-	const optiesButton = document.getElementById('optiesButton');
-	const menuScene = document.getElementById('js--menuScene');
-	const winkelScene = document.getElementById('js--winkelScene');
 	let checkmark = document.getElementsByClassName('js--checkmark');
 
 	// const addListeners = () => {
@@ -67,32 +62,32 @@ window.onload = () => {
 	// Maakt de shopping list aan met de prijzen en geeft een random lijstje aan de speler
 	window.setBoodschappenlijstje = () => {
 		let level = sessionStorage.getItem('level');
-		console.log(checkmark)
-		switch(level){
+		console.log(checkmark);
+		switch (level) {
 			case '4':
 				checkmark[7].setAttribute('opacity', '0');
 				checkmark[6].setAttribute('opacity', '0');
 				checkmark[5].setAttribute('opacity', '0');
 				checkmark[4].setAttribute('opacity', '0');
-				checkmark[7].setAttribute('class','');
-				checkmark[6].setAttribute('class','');
-				checkmark[5].setAttribute('class','');
-				checkmark[4].setAttribute('class','');
-		
-			break;
+				checkmark[7].setAttribute('class', '');
+				checkmark[6].setAttribute('class', '');
+				checkmark[5].setAttribute('class', '');
+				checkmark[4].setAttribute('class', '');
+
+				break;
 
 			case '6':
 				checkmark[7].setAttribute('opacity', '0');
 				checkmark[6].setAttribute('opacity', '0');
-				checkmark[7].setAttribute('class','');
-				checkmark[6].setAttribute('class','');
-			break;
+				checkmark[7].setAttribute('class', '');
+				checkmark[6].setAttribute('class', '');
+				break;
 		}
 		// let rawList = shopItemList;
 		// let rawPrice = shopPriceList;
 		// let listArray = '';
 		// let priceArray = '';
-		
+
 		for (let i = 0; i < level; i++) {
 			let randomNum = Math.floor(Math.random() * rawList.length);
 			listArray = listArray + rawList[randomNum] + ' ';
