@@ -56,7 +56,7 @@ window.onload = () => {
 	addListeners();
 
 	// Maakt de shopping list aan met de prijzen en geeft een random lijstje aan de speler
-	window.fn1 = () => {
+	window.setBoodschappenlijstje = () => {
 		// let rawList = shopItemList;
 		// let rawPrice = shopPriceList;
 		// let listArray = '';

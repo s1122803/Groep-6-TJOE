@@ -5,7 +5,7 @@ AFRAME.registerComponent('startbutton', {
 		const camera1 = document.getElementById('head1');
 		const lefthand = document.getElementById('left-hand1');
 		this.el.addEventListener('click', function () {
-			fn1();
+			setBoodschappenlijstje();
 			menuScene.setAttribute('visible', 'false');
 			winkelScene.setAttribute('visible', 'true');
 			// camera1.setAttribute('raycaster', 'objects: .clickable; far: 1.5;');
