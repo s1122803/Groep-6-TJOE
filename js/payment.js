@@ -34,9 +34,11 @@ AFRAME.registerComponent("payment", {
                     twentycent.setAttribute('value', count_20_cent+'x20 cent');
                     tencent.setAttribute('value', count_10_cent+'x10 cent');
                     fivecent.setAttribute('value', count_5_cent+'x5 cent');
+                    console.log('reset')
                     return
                 }
                 if(this.getAttribute('id') == 'js--accept-payment'){
+                    console.log(totalPrice + "   "+ totalPayment.toFixed(2))
                     if(totalPrice === totalPayment.toFixed(2)){
                         cheerSound.play();
                         
