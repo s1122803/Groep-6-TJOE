@@ -17,7 +17,7 @@
 	</head>
 
 	<body>
-		<a-scene loading-screen="backgroundColor: black;>
+		<a-scene loading-screen="backgroundColor: black;">
 			<a-assets>
 				<a-asset-item id="winkel-obj" src="./obj/supermarkt.obj"></a-asset-item>
 				<a-asset-item id="winkel-mtl" src="./obj/supermarkt.mtl"></a-asset-item>
@@ -96,7 +96,7 @@
 			<a-entity environment="preset: forest; ground: noise; groundYScale: 5; groundTexture: walkernoise; skyType: color; skyColor: #87CEEB; fog: 0;" position="0 -0.08 0"></a-entity>
 
 			<!-- Start menu -->
-			<a-entity id="js--menuScene" visible="false">
+			<a-entity id="js--menuScene" visible="true">
 				<a-box class="js--menuLopen" color="#f3dbc4" height="0.001" width="1" position="0 0 0" geometry="depth: 1" material="opacity: 0; transparent: true;"></a-box>
 				<!-- De winkel -->
 				<a-obj-model class="not-clickable" src="#winkel-obj" mtl="#winkel-mtl" position="10 0 -10" rotation="0 90 0" scale="0.2 0.2 0.2"></a-obj-model>
@@ -117,7 +117,7 @@
 				<!-- <a-entity environment="preset: forest; ground: noise; groundYScale: 5; groundTexture: walkernoise; skyType: color; skyColor: #87CEEB; fog: 0;"></a-entity> -->
 			</a-entity>
 			<!-- tweede scene hieronder! -->
-			<a-entity id="js--winkelScene" visible="true">
+			<a-entity id="js--winkelScene" visible="false">
 				<!-- <a-entity id="cameraRig2"> -->
 				<!-- camera -->
 				<!-- <a-entity id="head2" camera="" wasd-controls="" look-controls="" position="0 1.6 0" cursor="fuse: false; rayOrigin: mouse" raycaster="interval: 750 ; objects: .clickable; far: 1.5;">
