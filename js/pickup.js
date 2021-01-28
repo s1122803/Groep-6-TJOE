@@ -3,11 +3,16 @@ AFRAME.registerComponent('pickup', {
 		const phoneList = document.getElementById('js--phone-shoppinglist');
 		const paymentText = document.getElementById('js--payment-text');
 		const checkmark = document.getElementsByClassName('js--checkmark');
+		const moneyCount = document.getElementsByClassName('js--money-count');
 		const highscore = document.getElementById('js--score');
 		const plopSound = new Audio('././sound/plop.mp3');
+		const collectSound = new Audio('././sound/collect.mp3');
+		const beepSound = new Audio('././sound/beep.mp3');
 		plopSound.loop = false;
 		plopSound.currentTime = 0.9;
 		plopSound.volume = 0.2;
+		collectSound.volume = 0.2;
+		beepSound.volume = 0.2;
 		let itemCheck = false;
 		let timeout = false;
 		const updateShoppingList = (itemName) => {
@@ -31,18 +36,10 @@ AFRAME.registerComponent('pickup', {
 			if (colorArray.every((val) => val === 'green')) {
 				enablePayment = true;
 				paymentText.setAttribute('value', 'De prijs is: € ' + totalPrice);
+				for(let x = 0; x<moneyCount.length; x++){
+					moneyCount[x].setAttribute('opacity', '1');
+				}
 			}
-			// console.log("Check if true/false:  ",colorArray.every(val => val === "green"))
-
-			// for (let i = 0; i < 7; i++) {
-			//     if (itemArray[i] === '') {
-			//         itemArray[i] =  "item";
-
-			//         console.log()
-			//         camera.innerHTML += HTML.replace('clickable','');
-			//         console.log(itemPlace.children)
-			//     }
-			// }
 		};
 		this.addCompListener = () => {
 			this.el.addEventListener('click', function () {
@@ -52,12 +49,13 @@ AFRAME.registerComponent('pickup', {
 					let itemCheck = 0;
 					for (let i = 0; i < updatableList.length; i++) {
 						if (itemId[1] == updatableList[i] && checkmark[i].getAttribute('color') == 'red') {
-							console.log(checkmark[i].getAttribute('color'));
 							updateShoppingList(itemId[1]);
 							score = score + 100;
-							console.log(score);
 							highscore.setAttribute('value', 'Score: ' + score);
 							itemCheck = true;
+							setTimeout(function(){
+								collectSound.play();
+							},500);
 						}
 					}
 					this.setAttribute('animation', 'property: scale; to: 0 0 0; dur: 500; easing: linear; loop: false');
@@ -68,9 +66,12 @@ AFRAME.registerComponent('pickup', {
 						timeout = false;
 					}, 510);
 					if (i == updatableList.length && itemCheck == false) {
-						console.log('fout');
+						
 						score = score - 100;
 						highscore.setAttribute('value', 'Score: ' + score);
+						setTimeout(function(){
+							beepSound.play();
+						},500);
 					}
 				}
 			});

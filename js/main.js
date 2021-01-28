@@ -1,8 +1,8 @@
 //Global variables
 
 	// Alle items en de prijzen ervan (Prijzen van de items moeten op dezeflde positie in de array staan)
-	const shopItemList = ['pastasaus', 'spaghetti', 'pringles', 'chocolade', 'chips-naturel', 'chips-paprika', 'kip', 'appel', 'broccoli', 'brood', 'banaan', 'koek', 'sla'];
-	const shopPriceList = [2.99, 1.35, 2.09, 2.89, 0.99, 0.99, 6.69, 0.60, 1.49, 1.99, 0.99, 1.49, 0.99];
+	const shopItemList = ['pastasaus', 'spaghetti', 'pringles', 'chocolade', 'chips-naturel', 'chips-paprika', 'kip', 'appel', 'broccoli', 'brood', 'banaan'];
+	const shopPriceList = [2.99, 1.35, 2.09, 2.89, 0.99, 0.99, 6.69, 0.60, 1.49, 1.99, 0.99];
 	let shoppingCartArray = ['', '', '', '', '', '', '', ''];
 	let updatableList;
 	let rawList = shopItemList;
@@ -15,6 +15,15 @@
 	let score = 0;
 	let enablePayment = false;
 	let disableTick = false;
+	let count_10_euro = 0;
+	let count_5_euro = 0;
+	let count_2_euro = 0;
+	let count_1_euro = 0;
+	let count_50_cent = 0;
+	let count_20_cent = 0;
+	let count_10_cent = 0;
+	let count_5_cent = 0;
+
 
 window.onload = () => {
 	const phoneList = document.getElementById('js--phone-shoppinglist');
@@ -57,10 +66,6 @@ window.onload = () => {
 
 	// Maakt de shopping list aan met de prijzen en geeft een random lijstje aan de speler
 	const setShoppinglist = () => {
-		// let rawList = shopItemList;
-		// let rawPrice = shopPriceList;
-		// let listArray = '';
-		// let priceArray = '';
 		let easy = 4;
 		let medium = 6;
 		let hard = 8;
@@ -103,8 +108,6 @@ window.onload = () => {
 			totalPrice = parseFloat(priceSplit[0] + "." + priceDecimal);
 			totalPrice = totalPrice.toFixed(2)
 		}
-		console.log("TotalPrice = " + totalPrice);
-
 	}
 	setShoppinglist();
 };
