@@ -8,6 +8,10 @@ AFRAME.registerComponent("payment", {
         const twentycent = document.getElementById('js--20cent');
         const tencent = document.getElementById('js--10cent');
         const fivecent = document.getElementById('js--5cent');
+        const beepSound = new Audio('././sound/beep.mp3');
+        const cheerSound = new Audio('././sound/applause.mp3');
+        beepSound.volume = 0.2;
+        cheerSound.volume = 0.1;
         this.addPaymentListener = () => {
             this.el.addEventListener('click', function () {
                 
@@ -37,10 +41,11 @@ AFRAME.registerComponent("payment", {
                 if(this.getAttribute('id') == 'js--accept-payment'){
                     console.log("totalPayment:", totalPrice, " totalpayment.tofixed: ", totalPayment.toFixed(2))
                     if(totalPrice === totalPayment.toFixed(2)){
-                        console.log("Yay!")
+                        cheerSound.play();
+                        
                     }else{
-                        console.log("Wrong!")
-                        console.log(Math.abs(totalPrice - totalPayment).toFixed(2))
+                        beepSound.play();
+
                     }
                 }
                 let moneyId = this.getAttribute('class').split(' ');
