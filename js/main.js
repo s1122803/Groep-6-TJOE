@@ -13,7 +13,7 @@ let addListenerOnce = false;
 let totalPayment = 0.0;
 let totalPrice = 0.0;
 let score = 0;
-let enablePayment = false;
+let enablePayment = false; //terug zetten naar false!!
 let disableTick = false;
 let count_10_euro = 0;
 let count_5_euro = 0;
@@ -28,11 +28,6 @@ window.onload = () => {
 	const phoneList = document.getElementById('js--phone-shoppinglist');
 	const phone = document.getElementById('js--phone');
 
-	//Klik functies
-	const startButton = document.getElementById('startButton');
-	const optiesButton = document.getElementById('optiesButton');
-	const menuScene = document.getElementById('js--menuScene');
-	const winkelScene = document.getElementById('js--winkelScene');
 	let checkmark = document.getElementsByClassName('js--checkmark');
 
 	// const addListeners = () => {
@@ -67,37 +62,37 @@ window.onload = () => {
 	// Maakt de shopping list aan met de prijzen en geeft een random lijstje aan de speler
 	window.setBoodschappenlijstje = () => {
 		let level = sessionStorage.getItem('level');
-		switch(level){
+		switch (level) {
 			case '4':
 				checkmark[7].setAttribute('opacity', '0');
 				checkmark[6].setAttribute('opacity', '0');
 				checkmark[5].setAttribute('opacity', '0');
 				checkmark[4].setAttribute('opacity', '0');
-				checkmark[7].setAttribute('class','');
-				checkmark[6].setAttribute('class','');
-				checkmark[5].setAttribute('class','');
-				checkmark[4].setAttribute('class','');
-				checkmark[0].setAttribute('position','0.25 1.32 1.2');
-				checkmark[1].setAttribute('position','0.25 1.10 1.2');
-				checkmark[2].setAttribute('position','0.25 0.87  1.2');
-				checkmark[3].setAttribute('position','0.25 0.6 1.2');
-		
-			break;
+				checkmark[7].setAttribute('class', '');
+				checkmark[6].setAttribute('class', '');
+				checkmark[5].setAttribute('class', '');
+				checkmark[4].setAttribute('class', '');
+				checkmark[0].setAttribute('position', '0.25 1.32 1.2');
+				checkmark[1].setAttribute('position', '0.25 1.10 1.2');
+				checkmark[2].setAttribute('position', '0.25 0.87  1.2');
+				checkmark[3].setAttribute('position', '0.25 0.6 1.2');
+
+				break;
 
 			case '6':
 				checkmark[7].setAttribute('opacity', '0');
 				checkmark[6].setAttribute('opacity', '0');
-				checkmark[7].setAttribute('class','');
-				checkmark[6].setAttribute('class','');
-				checkmark[0].setAttribute('position','0.25 1.52 1.2');
-				checkmark[1].setAttribute('position','0.25 1.32 1.2');
-				checkmark[2].setAttribute('position','0.25 1.10  1.2');
-				checkmark[3].setAttribute('position','0.25 0.87 1.2');
-				checkmark[4].setAttribute('position','0.25 0.62 1.2');
-				checkmark[5].setAttribute('position','0.25 0.4 1.2');
-			break;
+				checkmark[7].setAttribute('class', '');
+				checkmark[6].setAttribute('class', '');
+				checkmark[0].setAttribute('position', '0.25 1.52 1.2');
+				checkmark[1].setAttribute('position', '0.25 1.32 1.2');
+				checkmark[2].setAttribute('position', '0.25 1.10  1.2');
+				checkmark[3].setAttribute('position', '0.25 0.87 1.2');
+				checkmark[4].setAttribute('position', '0.25 0.62 1.2');
+				checkmark[5].setAttribute('position', '0.25 0.4 1.2');
+				break;
 		}
-		
+
 		for (let i = 0; i < level; i++) {
 			let randomNum = Math.floor(Math.random() * rawList.length);
 			listArray = listArray + rawList[randomNum] + ' ';

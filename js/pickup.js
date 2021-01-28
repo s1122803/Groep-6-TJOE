@@ -7,6 +7,7 @@ AFRAME.registerComponent('pickup', {
 		const plopSound = new Audio('././sound/plop.mp3');
 		const collectSound = new Audio('././sound/collect.mp3');
 		const beepSound = new Audio('././sound/beep.mp3');
+		const acceptPayment = document.getElementById('js--accept-payment');
 		plopSound.loop = false;
 		plopSound.currentTime = 0.9;
 		// plopSound.volume = 0.2;
@@ -14,7 +15,7 @@ AFRAME.registerComponent('pickup', {
 		// beepSound.volume = 0.2;
 		let itemCheck = false;
 		let timeout = false;
-		
+
 		const updateShoppingList = (itemName) => {
 			let checkmark = document.getElementsByClassName('js--checkmark');
 			let list;
@@ -38,8 +39,9 @@ AFRAME.registerComponent('pickup', {
 				enablePayment = true;
 				paymentText.setAttribute('value', 'De prijs is: € ' + totalPrice);
 				for (let x = 0; x < moneyCount.length; x++) {
-					moneyCount[x].setAttribute('opacity', '1');
+					moneyCount[x].setAttribute('visible', 'true');
 				}
+				acceptPayment.setAttribute('visible', 'true');
 			}
 		};
 		this.addCompListener = () => {
