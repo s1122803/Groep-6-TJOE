@@ -2,7 +2,6 @@ AFRAME.registerComponent('pickup', {
 	init: function () {
 		const phoneList = document.getElementById('js--phone-shoppinglist');
 		const paymentText = document.getElementById('js--payment-text');
-		const checkmark = document.getElementsByClassName('js--checkmark');
 		const moneyCount = document.getElementsByClassName('js--money-count');
 		const highscore = document.getElementById('js--score');
 		const acceptPayment = document.getElementById('js--accept-payment');
@@ -16,7 +15,9 @@ AFRAME.registerComponent('pickup', {
 		beepSound.volume = 0.2;
 		let itemCheck = false;
 		let timeout = false;
+		
 		const updateShoppingList = (itemName) => {
+			let checkmark = document.getElementsByClassName('js--checkmark');
 			let list;
 			for (let i = 0; i < updatableList.length; i++) {
 				if (updatableList[i] == itemName) {
@@ -44,6 +45,7 @@ AFRAME.registerComponent('pickup', {
 			}
 		};
 		this.addCompListener = () => {
+			let checkmark = document.getElementsByClassName('js--checkmark');
 			this.el.addEventListener('click', function () {
 				if (timeout === false) {
 					timeout = true;

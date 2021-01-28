@@ -33,6 +33,7 @@ window.onload = () => {
 	const optiesButton = document.getElementById('optiesButton');
 	const menuScene = document.getElementById('js--menuScene');
 	const winkelScene = document.getElementById('js--winkelScene');
+	let checkmark = document.getElementsByClassName('js--checkmark');
 
 	const addListeners = () => {
 		optiesButton.addEventListener('click', function () {
@@ -65,11 +66,33 @@ window.onload = () => {
 
 	// Maakt de shopping list aan met de prijzen en geeft een random lijstje aan de speler
 	window.setBoodschappenlijstje = () => {
+		let level = sessionStorage.getItem('level');
+		console.log(checkmark)
+		switch(level){
+			case '4':
+				checkmark[7].setAttribute('opacity', '0');
+				checkmark[6].setAttribute('opacity', '0');
+				checkmark[5].setAttribute('opacity', '0');
+				checkmark[4].setAttribute('opacity', '0');
+				checkmark[7].setAttribute('class','');
+				checkmark[6].setAttribute('class','');
+				checkmark[5].setAttribute('class','');
+				checkmark[4].setAttribute('class','');
+		
+			break;
+
+			case '6':
+				checkmark[7].setAttribute('opacity', '0');
+				checkmark[6].setAttribute('opacity', '0');
+				checkmark[7].setAttribute('class','');
+				checkmark[6].setAttribute('class','');
+			break;
+		}
 		// let rawList = shopItemList;
 		// let rawPrice = shopPriceList;
 		// let listArray = '';
 		// let priceArray = '';
-		let level = sessionStorage.getItem('level');
+		
 		for (let i = 0; i < level; i++) {
 			let randomNum = Math.floor(Math.random() * rawList.length);
 			listArray = listArray + rawList[randomNum] + ' ';
