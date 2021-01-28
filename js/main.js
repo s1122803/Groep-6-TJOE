@@ -1,8 +1,8 @@
 //Global variables
 
 	// Alle items en de prijzen ervan (Prijzen van de items moeten op dezeflde positie in de array staan)
-	const shopItemList = ['pastasaus', 'spaghetti', 'pringles', 'chocolade', 'chips-naturel', 'chips-paprika', 'kip', 'appel', 'broccoli', 'brood', 'banaan', 'koek', 'sla'];
-	const shopPriceList = [2.99, 1.35, 2.09, 2.89, 0.99, 0.99, 6.69, 0.60, 1.49, 1.99, 0.99, 1.49, 0.99];
+	const shopItemList = ['appel', 'banaan', 'peer', 'broccoli', 'sla', 'paprika', 'brood', 'kip', 'gehakt', 'spaghetti', 'pastasaus', 'pringles', 'chocolade', 'chips-naturel', 'chips-paprika', 'mais', 'cola', 'fanta', 'water', 'sinaasappelsap'];
+	const shopPriceList = [0.60, 0.99, 0.60, 1.49, 0.99, 0.89, 1.99, 6.69, 3.09, 1.35, 2.99, 2.09, 2.89, 0.99, 0.99, 1.59, 1.85, 1.99, 0.59, 1.43];
 	let shoppingCartArray = ['', '', '', '', '', '', '', ''];
 	let updatableList;
 	let rawList = shopItemList;
