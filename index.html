@@ -17,7 +17,7 @@
 	</head>
 
 	<body>
-		<a-scene>
+		<a-scene loading-screen="backgroundColor: black;">
 			<a-assets>
 				<a-asset-item id="winkel-obj" src="./obj/supermarkt.obj"></a-asset-item>
 				<a-asset-item id="winkel-mtl" src="./obj/supermarkt.mtl"></a-asset-item>
@@ -168,8 +168,10 @@
 				<a-plane class="js--nietLopen" color="#f3dbc4" height="0.5" width="2" position="-0 0 1.25" rotation="-90 0 0"></a-plane>
 
 				<!-- afrekenen -->
-				<a-plane class="js--kassaVloer" color="#f3dbc4" height="1.5" width="0.5" position="-1.25 0 -9.75" rotation="-90 0 0"></a-plane>
-				<a-plane class="js--kassaVloer" color="#f3dbc4" height="1.5" width="2" position="-2.5 0 -9.75" rotation="-90 0 0"></a-plane>
+				<!-- <a-plane class="js--kassaVloer" color="#f3dbc4" height="1.5" width="0.5" position="-1.25 0 -9.75" rotation="-90 0 0"></a-plane> -->
+				<a-box class="js--welLopen" color="#f3dbc4" height="0.001" width="0.5" position="-1.25 0 -9.75" geometry="depth: 1.5"></a-box>
+				<!-- <a-plane class="js--kassaVloer" color="#f3dbc4" height="1.5" width="2" position="-2.5 0 -9.75" rotation="-90 0 0"></a-plane>w -->
+				<a-box class="js--welLopen" color="#f3dbc4" height="0.001" width="2" position="-2.5 0 -9.75" geometry="depth: 1.5"></a-box>
 
 				<a-text id="js--score" color="white" value="Score: 0" position="-1 1.9 -3.25" scale="1.5 1.5 1.5" rotation="0 90 0"></a-text>
 
