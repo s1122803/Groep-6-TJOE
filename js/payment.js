@@ -13,10 +13,9 @@ AFRAME.registerComponent('payment', {
 		const winkelScene = document.getElementById('js--winkelScene');
 		const eindScene = document.getElementById('js--eindScene');
 		const camera1 = document.getElementById('head1');
-		const lefthand = document.getElementById('left-hand1');
-		const eindScore = document.getElementById('js--eind-score');
-		// beepSound.volume = 0.2;
-		// cheerSound.volume = 0.1;
+        const lefthand = document.getElementById('left-hand1');
+        const highscore = document.getElementById('js--score');
+        const eindScore = document.getElementById('js--eind-score');
 		this.addPaymentListener = () => {
 			this.el.addEventListener('click', function () {
 				if (enablePayment == true) {
@@ -43,14 +42,17 @@ AFRAME.registerComponent('payment', {
 					if (this.getAttribute('id') == 'js--accept-payment') {
 						if (totalPrice === totalPayment.toFixed(2)) {
 							cheerSound.volume = sessionStorage.getItem('volume') / 2;
-							cheerSound.play();
+                            cheerSound.play();
+                            score += 300;
 							winkelScene.setAttribute('visible', 'false');
 							eindScene.setAttribute('visible', 'true');
 							eindScore.setAttribute('value', 'Je score is: ' + score);
 							camera1.setAttribute('raycaster', 'objects: .clickable-eindscene; far: infinite;');
 							lefthand.setAttribute('teleport-controls', 'cameraRig: #cameraRig1; teleportOrigin: #head1; button: trigger; collisionEntities: .js--eindLopen; curveShootingSpeed:5;');
 						} else {
-							beepSound.volume = sessionStorage.getItem('volume');
+                            beepSound.volume = sessionStorage.getItem('volume');
+                            score -= 100;
+                            highscore.setAttribute('value', 'Score: ' + score);
 							beepSound.play();
 						}
 					}
