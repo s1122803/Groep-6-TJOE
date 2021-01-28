@@ -313,7 +313,9 @@
 				<!-- kassa -->
 				<a-box color="black" height="1" width="2.5" depth="1" position="-2.25 0.5 -11">
 					<a-text id="js--payment-text" value="Doe eerst je boodschappen!" color="white" position ="0.4 1.85 -0.5" ></a-text>
-					<a-text payment id="js--accept-payment" class="clickable" opacity="0" value="Betalen" color="white" position ="0.4 1.25 -0.5"></a-text>
+					<a-text payment id="js--accept-payment" class="clickable" visible="false" value="Betalen" color="white" position ="0.4 1.25 -0.45">
+						<a-box material="color: #00b300" geometry="depth: 0.05; height: 0.4; width: 0.97" position="0.3746 -0.01238 -0.025"></a-box>
+					</a-text>
 					<a-obj-model payment class="clickable 5euro" src="#5euro-obj" mtl="#5euro-mtl" position="0.7 0.5 -0.06" scale="0.05 0.05 0.05" rotation="0 270 0"></a-obj-model>
 					<a-obj-model payment class="clickable 10euro" src="#10euro-obj" mtl="#10euro-mtl" position="1.1 0.5 -0.06" scale="0.05 0.05 0.05" rotation="0 270 0"></a-obj-model>
 					<a-obj-model payment class="clickable 1euro" src="#1euro-obj" mtl="#1euro-mtl" position="0.8 0.5 0.12" scale="0.05 0.05 0.05" rotation="0 180 0"></a-obj-model>
@@ -322,15 +324,17 @@
 					<a-obj-model payment class="clickable 10cent" src="#10cent-obj" mtl="#10cent-mtl" position="0.8 0.5 0.3" scale="0.03 0.03 0.03" rotation="0 180 0"></a-obj-model>
 					<a-obj-model payment class="clickable 20cent" src="#20cent-obj" mtl="#20cent-mtl" position="1 0.5 0.3" scale="0.035 0.035 0.035" rotation="0 180 0"></a-obj-model>
 					<a-obj-model payment class="clickable 50cent" src="#50cent-obj" mtl="#50cent-mtl" position="1.2 0.5 0.3" scale="0.04 0.04 0.04" rotation="0 180 0"></a-obj-model>
-					<a-text id="js--10euro" class="js--money-count" opacity="0" value="0x10 euro" color="white" position ="-1.25 2.05 -0.5"></a-text>
-					<a-text id="js--5euro" class="js--money-count" opacity="0" value="0x5 euro" color="white" position ="-1.25 1.85 -0.5"></a-text>
-					<a-text id="js--2euro" class="js--money-count" opacity="0" value="0x2 euro" color="white" position ="-1.25 1.65 -0.5"></a-text>
-					<a-text id="js--1euro" class="js--money-count" opacity="0" value="0x1 euro" color="white" position ="-1.25 1.45 -0.5"></a-text>
-					<a-text id="js--50cent" class="js--money-count" opacity="0" value="0x50 cent" color="white" position ="-1.25 1.25 -0.5"></a-text>
-					<a-text id="js--20cent" class="js--money-count" opacity="0" value="0x20 cent" color="white" position ="-1.25 1.05 -0.5"></a-text>
-					<a-text id="js--10cent" class="js--money-count" opacity="0" value="0x10 cent" color="white" position ="-1.25 0.85 -0.5"></a-text>
-					<a-text id="js--5cent" class="js--money-count" opacity="0" value="0x5 cent" color="white" position ="-1.25 0.65 -0.5"></a-text>
-					<a-text payment id="js--count-reset" class="clickable js--money-count" opacity="0" value="Reset" color="red" scale="1.2" position ="0.4 0.8 -0.5"></a-text>
+					<a-text id="js--10euro" class="js--money-count" visible="false" value="0x10 euro" color="white" position ="-1.25 2.05 -0.5"></a-text>
+					<a-text id="js--5euro" class="js--money-count" visible="false" value="0x5 euro" color="white" position ="-1.25 1.85 -0.5"></a-text>
+					<a-text id="js--2euro" class="js--money-count" visible="false" value="0x2 euro" color="white" position ="-1.25 1.65 -0.5"></a-text>
+					<a-text id="js--1euro" class="js--money-count" visible="false" value="0x1 euro" color="white" position ="-1.25 1.45 -0.5"></a-text>
+					<a-text id="js--50cent" class="js--money-count" visible="false" value="0x50 cent" color="white" position ="-1.25 1.25 -0.5"></a-text>
+					<a-text id="js--20cent" class="js--money-count" visible="false" value="0x20 cent" color="white" position ="-1.25 1.05 -0.5"></a-text>
+					<a-text id="js--10cent" class="js--money-count" visible="false" value="0x10 cent" color="white" position ="-1.25 0.85 -0.5"></a-text>
+					<a-text id="js--5cent" class="js--money-count" visible="false" value="0x5 cent" color="white" position ="-1.25 0.65 -0.5"></a-text>
+					<a-text payment id="js--count-reset" class="clickable js--money-count" visible="false" value="Reset" scale="1.2" position ="0.4 0.8 -0.45">
+						<a-box material="color: red" geometry="depth: 0.05; height: 0.4; width: 0.8" position="0.31382 0 -0.025"></a-box>
+					</a-text>
 				</a-box>
 
 				<!-- muren -->
