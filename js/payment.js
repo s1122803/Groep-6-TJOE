@@ -34,12 +34,9 @@ AFRAME.registerComponent("payment", {
                     twentycent.setAttribute('value', count_20_cent+'x20 cent');
                     tencent.setAttribute('value', count_10_cent+'x10 cent');
                     fivecent.setAttribute('value', count_5_cent+'x5 cent');
-                    console.log(totalPrice)
-                    console.log(totalPayment.toFixed(2))
                     return
                 }
                 if(this.getAttribute('id') == 'js--accept-payment'){
-                    console.log("totalPayment:", totalPrice, " totalpayment.tofixed: ", totalPayment.toFixed(2))
                     if(totalPrice === totalPayment.toFixed(2)){
                         cheerSound.play();
                         
@@ -49,7 +46,6 @@ AFRAME.registerComponent("payment", {
                     }
                 }
                 let moneyId = this.getAttribute('class').split(' ');
-                console.log("test")
                 switch(moneyId[1]){
                     case "10euro":
                         totalPayment += 10;
@@ -92,8 +88,6 @@ AFRAME.registerComponent("payment", {
                         fivecent.setAttribute('value', count_5_cent+'x5 cent');
                     break;
                 }
-                // console.log(totalPrice)
-                // console.log(totalPayment.toFixed(2))
                 
             }
                 

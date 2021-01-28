@@ -16,7 +16,6 @@ AFRAME.registerComponent('phone', {
 			let split_1 = rawTime.currentDateTime.split('T');
 			let minSec = split_1[1].split('+');
 			phone.setAttribute('value', minSec[0]);
-			console.log(minSec[0])
 			setTimeout(function(){
 				delay = false;
 			},5000);
