@@ -20,6 +20,7 @@ AFRAME.registerComponent('payment', {
 		const righthand = document.getElementById('right-hand1');
 		this.addPaymentListener = () => {
 			this.el.addEventListener('click', function () {
+				moneySound.volume = sessionStorage.getItem('volume');
 				if (enablePayment == true) {
 					if (this.getAttribute('id') == 'js--count-reset') {
 						count_10_euro = 0;
@@ -39,6 +40,7 @@ AFRAME.registerComponent('payment', {
 						twentycent.setAttribute('value', count_20_cent + 'x20 cent');
 						tencent.setAttribute('value', count_10_cent + 'x10 cent');
 						fivecent.setAttribute('value', count_5_cent + 'x5 cent');
+						moneySound.play();
 						return;
 					}
 					if (this.getAttribute('id') == 'js--accept-payment') {
@@ -60,45 +62,52 @@ AFRAME.registerComponent('payment', {
 						}
 					}
 					let moneyId = this.getAttribute('class').split(' ');
-					moneySound.volume = sessionStorage.getItem('volume');
-					moneySound.play();
+					
 					switch (moneyId[1]) {
 						case '10euro':
+							moneySound.play();
 							totalPayment += 10;
 							count_10_euro += 1;
 							teneuro.setAttribute('value', count_10_euro + 'x10 euro');
 							break;
 						case '5euro':
+							moneySound.play();
 							totalPayment += 5;
 							count_5_euro += 1;
 							fiveeuro.setAttribute('value', count_5_euro + 'x5 euro');
 							break;
 						case '2euro':
+							moneySound.play();
 							totalPayment += 2;
 							count_2_euro += 1;
 							twoeuro.setAttribute('value', count_2_euro + 'x2 euro');
 							break;
 						case '1euro':
+							moneySound.play();
 							totalPayment += 1;
 							count_1_euro += 1;
 							oneeuro.setAttribute('value', count_1_euro + 'x1 euro');
 							break;
 						case '50cent':
+							moneySound.play();
 							totalPayment += 0.5;
 							count_50_cent += 1;
 							fiftycent.setAttribute('value', count_50_cent + 'x50 cent');
 							break;
 						case '20cent':
+							moneySound.play();
 							totalPayment += 0.2;
 							count_20_cent += 1;
 							twentycent.setAttribute('value', count_20_cent + 'x20 cent');
 							break;
 						case '10cent':
+							moneySound.play();
 							totalPayment += 0.1;
 							count_10_cent += 1;
 							tencent.setAttribute('value', count_10_cent + 'x10 cent');
 							break;
 						case '5cent':
+							moneySound.play();
 							totalPayment += 0.05;
 							count_5_cent += 1;
 							fivecent.setAttribute('value', count_5_cent + 'x5 cent');
