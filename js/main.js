@@ -23,14 +23,24 @@ let count_50_cent = 0;
 let count_20_cent = 0;
 let count_10_cent = 0;
 let count_5_cent = 0;
+const forestSound = new Audio('././sound/forest.mp3');
+const storeSound = new Audio('././sound/store.mp3');
 
 window.onload = () => {
+	document.querySelector('a-scene').addEventListener('enter-vr', function () {
+		forestSound.volume = sessionStorage.getItem('volume');
+		forestSound.play();
+	 });
+	
 	const phoneList = document.getElementById('js--phone-shoppinglist');
 	const phone = document.getElementById('js--phone');
 
 	let checkmark = document.getElementsByClassName('js--checkmark');
 
 	window.setBoodschappenlijstje = () => {
+		forestSound.pause();
+		storeSound.volume = sessionStorage.getItem('volume') /2;
+		storeSound.play();
 		let level = sessionStorage.getItem('level');
 		switch (level) {
 			case '4':

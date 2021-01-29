@@ -10,6 +10,7 @@ AFRAME.registerComponent('payment', {
 		const fivecent = document.getElementById('js--5cent');
 		const beepSound = new Audio('././sound/beep.mp3');
 		const cheerSound = new Audio('././sound/applause.mp3');
+		const moneySound = new Audio('././sound/money.mp3');
 		const winkelScene = document.getElementById('js--winkelScene');
 		const eindScene = document.getElementById('js--eindScene');
 		const camera1 = document.getElementById('head1');
@@ -41,7 +42,7 @@ AFRAME.registerComponent('payment', {
 					}
 					if (this.getAttribute('id') == 'js--accept-payment') {
 						if (totalPrice === totalPayment.toFixed(2)) {
-							cheerSound.volume = sessionStorage.getItem('volume') / 2;
+							cheerSound.volume = sessionStorage.getItem('volume');
                             cheerSound.play();
                             score += 300;
 							winkelScene.setAttribute('visible', 'false');
@@ -52,13 +53,16 @@ AFRAME.registerComponent('payment', {
 						} else {
                             beepSound.volume = sessionStorage.getItem('volume');
                             score -= 100;
-                            highscore.setAttribute('value', 'Score: ' + score);
+							highscore.setAttribute('value', 'Score: ' + score);
 							beepSound.play();
 						}
 					}
 					let moneyId = this.getAttribute('class').split(' ');
+					moneySound.volume = sessionStorage.getItem('volume');
+					moneySound.play();
 					switch (moneyId[1]) {
 						case '10euro':
+							
 							totalPayment += 10;
 							count_10_euro += 1;
 							teneuro.setAttribute('value', count_10_euro + 'x10 euro');
