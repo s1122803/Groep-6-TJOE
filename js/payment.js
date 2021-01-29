@@ -46,17 +46,17 @@ AFRAME.registerComponent('payment', {
 					if (this.getAttribute('id') == 'js--accept-payment') {
 						if (totalPrice == totalPayment.toFixed(2)) {
 							cheerSound.volume = sessionStorage.getItem('volume');
-                            cheerSound.play();
-                            score += 300;
+							cheerSound.play();
+							score += 300;
 							winkelScene.setAttribute('visible', 'false');
 							eindScene.setAttribute('visible', 'true');
 							eindScore.setAttribute('value', 'Je score is: ' + score);
 							camera1.setAttribute('raycaster', 'objects: .clickable-eindscene; far: infinite;');
-							righthand.setAttribute('raycaster', 'objects: .clickable-eindscene; far: infinite;');
+							righthand.setAttribute('raycaster', 'objects: .clickable-eindscene; far: 50;');
 							lefthand.setAttribute('teleport-controls', 'cameraRig: #cameraRig1; teleportOrigin: #head1; button: trigger; collisionEntities: .js--eindLopen; curveShootingSpeed:5;');
 						} else {
-                            beepSound.volume = sessionStorage.getItem('volume');
-                            score -= 100;
+							beepSound.volume = sessionStorage.getItem('volume');
+							score -= 100;
 							highscore.setAttribute('value', 'Score: ' + score);
 							beepSound.play();
 						}
