@@ -50,7 +50,7 @@ AFRAME.registerComponent('payment', {
 							eindScene.setAttribute('visible', 'true');
 							eindScore.setAttribute('value', 'Je score is: ' + score);
 							camera1.setAttribute('raycaster', 'objects: .clickable-eindscene; far: infinite;');
-							righthand.setAttribute('raycaster', 'objects: .clickable-eindscene; far: infinite;');
+							righthand.setAttribute('raycaster', 'objects: .clickable-eindscene; far: 50;');
 							lefthand.setAttribute('teleport-controls', 'cameraRig: #cameraRig1; teleportOrigin: #head1; button: trigger; collisionEntities: .js--eindLopen; curveShootingSpeed:5;');
 						} else {
                             beepSound.volume = sessionStorage.getItem('volume');
