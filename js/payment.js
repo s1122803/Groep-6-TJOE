@@ -14,9 +14,10 @@ AFRAME.registerComponent('payment', {
 		const winkelScene = document.getElementById('js--winkelScene');
 		const eindScene = document.getElementById('js--eindScene');
 		const camera1 = document.getElementById('head1');
-        const lefthand = document.getElementById('left-hand1');
-        const highscore = document.getElementById('js--score');
-        const eindScore = document.getElementById('js--eind-score');
+		const lefthand = document.getElementById('left-hand1');
+		const highscore = document.getElementById('js--score');
+		const eindScore = document.getElementById('js--eind-score');
+		const righthand = document.getElementById('right-hand1');
 		this.addPaymentListener = () => {
 			this.el.addEventListener('click', function () {
 				if (enablePayment == true) {
@@ -41,7 +42,7 @@ AFRAME.registerComponent('payment', {
 						return;
 					}
 					if (this.getAttribute('id') == 'js--accept-payment') {
-						if (totalPrice === totalPayment.toFixed(2)) {
+						if (totalPrice == totalPayment.toFixed(2)) {
 							cheerSound.volume = sessionStorage.getItem('volume');
                             cheerSound.play();
                             score += 300;
@@ -49,6 +50,7 @@ AFRAME.registerComponent('payment', {
 							eindScene.setAttribute('visible', 'true');
 							eindScore.setAttribute('value', 'Je score is: ' + score);
 							camera1.setAttribute('raycaster', 'objects: .clickable-eindscene; far: infinite;');
+							righthand.setAttribute('raycaster', 'objects: .clickable-eindscene; far: infinite;');
 							lefthand.setAttribute('teleport-controls', 'cameraRig: #cameraRig1; teleportOrigin: #head1; button: trigger; collisionEntities: .js--eindLopen; curveShootingSpeed:5;');
 						} else {
                             beepSound.volume = sessionStorage.getItem('volume');
@@ -62,7 +64,6 @@ AFRAME.registerComponent('payment', {
 					moneySound.play();
 					switch (moneyId[1]) {
 						case '10euro':
-							
 							totalPayment += 10;
 							count_10_euro += 1;
 							teneuro.setAttribute('value', count_10_euro + 'x10 euro');
